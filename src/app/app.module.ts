@@ -38,6 +38,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { InstitutionEditComponent } from './institution-edit/institution-edit.component';
 import { InstitutionAddComponent } from './institution-add/institution-add.component';
 import { InstitutionAjouterComponent } from './institution-ajouter/institution-ajouter.component';
+import { RgAlimentaireDetailsComponent } from './rg-alimentaire-details/rg-alimentaire-details.component';
+import { RgAnimaleDetailsComponent } from './rg-animale-details/rg-animale-details.component';
+import { RgForetDetailsComponent } from './rg-foret-details/rg-foret-details.component';
+import { RgMarineDetailsComponent } from './rg-marine-details/rg-marine-details.component';
+import { RgMicroDetailsComponent } from './rg-micro-details/rg-micro-details.component';
 
 
 @NgModule({
@@ -71,6 +76,11 @@ import { InstitutionAjouterComponent } from './institution-ajouter/institution-a
     InstitutionEditComponent,
     InstitutionAddComponent,
     InstitutionAjouterComponent,
+    RgAlimentaireDetailsComponent,
+    RgAnimaleDetailsComponent,
+    RgForetDetailsComponent,
+    RgMarineDetailsComponent,
+    RgMicroDetailsComponent,
   ],
   imports: [
     BrowserModule,

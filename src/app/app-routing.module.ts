@@ -25,6 +25,11 @@ import { RgForetComponent } from './rg-foret/rg-foret.component';
 import { InstitutionEditComponent } from './institution-edit/institution-edit.component'; 
 import { InstitutionAddComponent } from './institution-add/institution-add.component'; 
 import { InstitutionAjouterComponent } from './institution-ajouter/institution-ajouter.component';
+import { RgAlimentaireDetailsComponent } from './rg-alimentaire-details/rg-alimentaire-details.component';
+import { RgForetDetailsComponent } from './rg-foret-details/rg-foret-details.component';
+import { RgMicroDetailsComponent } from './rg-micro-details/rg-micro-details.component';
+import { RgMarineDetailsComponent } from './rg-marine-details/rg-marine-details.component';
+import { RgAnimaleDetailsComponent } from './rg-animale-details/rg-animale-details.component';
 const routes: Routes = [
   //{path: '',redirectTo: 'home', pathMatch: 'full'},
   {
@@ -44,14 +49,19 @@ const routes: Routes = [
   {path: 'evenements', component: EventComponent},
   {path: 'evenements/ajouterevenements', component: AddeventComponent},
   {path: 'institution', component: InstitutionComponent},
-  { path: 'institution/ajouter', component: InstitutionAddComponent }, 
-  { path: 'institution/:id', component: InstitutionDetailComponent}, 
-  { path: 'institution/edit/:id', component: InstitutionEditComponent },
-  { path: 'rg/marine', component: RgMarineComponent }, 
-  { path: 'rg/foret', component: RgForetComponent }, 
-  { path: 'rg/micro', component: RgMicroComponent }, 
-  { path: 'rg/alimentaire', component: RgAlimentaireComponent }, 
-  { path: 'rg/animale', component: RgAnimaleComponent }, 
+  {path: 'institution/ajouter', component: InstitutionAddComponent }, 
+  {path: 'institution/:id', component: InstitutionDetailComponent}, 
+  {path: 'institution/edit/:id', component: InstitutionEditComponent },
+  {path: 'rg/marine', component: RgMarineComponent }, 
+  {path: 'rg/marine/detail', component:RgMarineDetailsComponent},
+  {path: 'rg/foret', component: RgForetComponent }, 
+  {path: 'rg/foret/detail', component: RgForetDetailsComponent},
+  {path: 'rg/micro', component: RgMicroComponent }, 
+  {path: 'rg/micro/detail', component: RgMicroDetailsComponent},
+  {path: 'rg/alimentaire', component: RgAlimentaireComponent },
+  {path: 'rg/alimentaire/detail', component: RgAlimentaireDetailsComponent}, 
+  {path: 'rg/animale', component: RgAnimaleComponent }, 
+  {path: 'rg/animale/detail', component: RgAnimaleDetailsComponent},
   {
     path: 'admin',
     component: AdminComponent,

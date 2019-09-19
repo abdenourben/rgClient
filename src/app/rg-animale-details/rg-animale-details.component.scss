@@ -1,0 +1,92 @@
+.container > p {
+    font-size: .870rem;
+    font-weight: bold;
+    line-height: 20px;
+    color: #0b8557;
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+  }
+  .a{
+    font-size: .870rem;
+    line-height: 20px;
+    color: #1c1c1c;
+    padding-left: 50px;
+  
+  }
+  .img-thumbnail{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px 8px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #0b6e48;
+    color: white;
+  }
+  
+  .active {
+    background-color: #0b6e48;
+    color: white;
+  }
+  .rectangle {
+    height: 100px;
+    width: 100%;
+    padding-top: 30px;
+    padding-left: 140px;
+    background-color: #ebf9eb;
+  }
+
+  .container {
+    padding-top: 30px; 
+    padding-left: 50px; 
+  }
+  
+  .container-info {
+    padding: 2em; 
+    padding-left: 20px; 
+  }
+  
+  .button-mod {
+    position: absolute;
+    margin-left: 700px; 
+  }
+  
+  .button-supp {
+    position: absolute; 
+    margin-left: 800px; 
+  }
+  
+  .title {
+    font-weight:300;
+      color: #0b8557;
+  }
+  
+  .tabset {
+    margin: 10%;
+    margin-top: 3%;
+  }
+  
+
+  
