@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="home"><img src="assets\img\logoo.png" alt="" style="height: 50px; width: 50px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin" *ngIf="isAdmin" routerLinkActive="meactive">Administration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home" routerLinkActive="meactive">Acceuil </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLinkActive="meactive" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ressources Génétiques
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="rg/foret">Ressources génétiques forestières et relatives aux plantes aromatiqus et medicinales</a>
+            <a class="dropdown-item" routerLink="rg/alimentaire">Ressources génétiques pour l'alimentation et l'agriculture</a>
+            <a class="dropdown-item" routerLink="rg/marine">Ressources génétiques marines</a>
+            <a class="dropdown-item" routerLink="rg/animale">Ressources génétiques de la faune sauvage et domestique</a>
+            <a class="dropdown-item" routerLink="rg/micro">Ressources génétiques des microorganismes</a>
+            <!--<div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="#">Something else here</a>-->
+          </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="permis" routerLinkActive="meactive">Permis</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="institution" routerLinkActive="meactive">Annuaire</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="reglementation" routerLinkActive="meactive">Réglementation</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="projets" routerLinkActive="meactive">Projets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/evenements" routerLinkActive="meactive">Evenements</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/about" routerLinkActive="meactive">A propos</a>
+        </li>
+        <!--<li class="nav-item">
+          <a class="nav-link disabled" routerLink="#">Disabled</a>
+        </li>-->
+      </ul>
+
+      <!--
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Rechercher ..." aria-label="Search">
+        <button class="btn btn-outline-success my-1 my-sm-0" type="submit" id="searchbtn">Rechercher</button>
+      </form>
+      -->
+    </div>
+  </nav>

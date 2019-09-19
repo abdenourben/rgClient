@@ -1,0 +1,72 @@
+<div class="container" *ngIf="institution">
+  <h3 class="title">
+    <b>{{institution.nom}}</b>
+    {{institution.raisonSociale}}
+  </h3>
+  <br>
+
+  <div>
+    <a routerLink="/institution/edit/{{institution.id}}" class="btn btn-primary button-mod">Modifier</a>
+    <a routerLink="#" class="btn btn-danger button-supp">Supprimer</a>
+  </div>
+
+
+  <ngb-tabset>
+      <ngb-tab title="Profile">
+        <ng-template ngbTabContent>
+          <div class="container-info">
+            <b>Année de création :</b>  
+            <br>
+            <b>Catégorie :</b> {{institution.categorie}}
+            <br>
+            <b>Type :</b> {{institution.type}}
+            <br>
+            <b>Statut juridique :</b> {{institution.statutJuridique}}
+            <br>
+            <b>Secteur d'activité :</b> {{institution.secteurActivite}}
+            <br>
+            <b>Nature de l'établissement :</b> {{institution.natureEtabelissement}}
+            <br>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Contact">
+          <ng-template ngbTabContent>
+            <div class="container-info">
+              <b>Téléphone portable :</b> {{institution.telPortable}} 
+              <br>
+              <b>Téléphone fixe :</b> {{institution.telFixe}}
+              <br>
+              <b>Fax :</b> {{institution.fax}}
+              <br>
+              <b>Site Web :</b> {{institution.siteWeb}}
+              <br>
+            </div>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Détail">
+            <ng-template ngbTabContent>
+              <div class="container-info">
+                <b>Année d'implication à l'APA :</b> {{institution.anneeImplicationApa}}
+                <br>
+                <b>Type d'implication à l'APA :</b> {{institution.typeImplicationApa}}
+                <br>
+              </div>  
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Informations additionnelles">
+              <ng-template ngbTabContent>
+                  <div class="container-info">
+                    <P>
+                      {{institution.infoAdditionnelles}}
+                    </P>
+                  </div>
+              </ng-template>
+            </ngb-tab>
+  </ngb-tabset>
+</div>
+
+
+
+
+

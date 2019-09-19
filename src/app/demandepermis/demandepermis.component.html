@@ -1,0 +1,43 @@
+<!-- Default form contact -->
+<form class="text-center border border-light p-5" action="permis" style="margin-left: 10%;margin-right: 10%;" [formGroup]="formDemande" >
+
+        <p class="h4 mb-4">Demande d'un permis</p>
+    
+        <!-- Titre de permis -->
+        <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Titre du permis d'exploitation de ressources génétiques">
+    
+        
+        <!-- Type -->
+        <label>Type de permis</label>
+        <select class="browser-default custom-select mb-4">
+            <option value="1" selected>Type 1</option>
+            <option value="2">Type 2</option>
+            <option value="3">Type 3</option>
+            <option value="4">Type 4</option>
+        </select>
+
+        <!-- Nom de l'organisation -->
+        <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Nom de l'organisation">
+    
+        <!-- Adresse mail -->
+        <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Adresse mail">
+    
+
+        <!-- Message -->
+        <div class="form-group">
+            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+        </div>
+    
+        <!-- Copy -->
+        <div class="custom-control custom-checkbox mb-4">
+            <input type="checkbox" class="custom-control-input" id="defaultContactFormCopy">
+            <label class="custom-control-label" for="defaultContactFormCopy">Envoie moi une copie de ce message</label>
+        </div>
+    
+        <!-- Send button -->
+        <div class="permission_btn">
+                <button type="submit" class="btn btn-success btn-rounded" id="permission">Demande de permission</button>
+        </div>
+    
+    </form>
+    <!-- Default form contact -->

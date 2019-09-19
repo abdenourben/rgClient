@@ -1,0 +1,27 @@
+<div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin" [formGroup]="loginForm" (click)="onSubmit()" >
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Adresse email" formControlName="email" required autofocus [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" formControlName="password" required [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Se souvenir de moi
+                    </label>
+                </div>
+                <button [disabled]="loading" class="btn btn-lg btn-primary btn-block btn-signin">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Se connecter
+                    </button>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form><!-- /form -->
+            <a href="#" class="forgot-password">
+                Informations de compte oubliées ?
+            </a>
+
+           
+        </div><!-- /card-container -->
+    </div><!-- /container -->

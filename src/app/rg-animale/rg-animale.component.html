@@ -1,0 +1,35 @@
+<nav class="navigation">
+    <ul class="mainmenu">
+        <li><a href="">Taxonomie</a>
+        <ul class="submenu">
+            <li><a href="">Espèce</a></li>
+            <li><a href="">Gènes</a></li>
+        </ul>
+        </li>
+        <li><a href="">Distribution</a>
+        <ul class="submenu">
+            <li><a href="">Région</a></li>
+            <li><a href="">Wilaya</a></li>
+        </ul>
+        </li>
+        <li><a href="">Éditeurs</a></li>
+        <li><a href="">Contribuer</a></li>
+    </ul>
+</nav>
+<h2 class="title">LES RESSOURCES ANIMALES</h2>
+<div class="container" >  
+    <div class="row">
+        <div class="col-lg-3 container-card" *ngFor="let rgAnimale of rgAnimales">
+        <div class="card">
+            <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h6 class="card-title ">{{rgAnimale.nomCommunFr}}</h6>
+                <p class="card-text">
+                {{rgAnimale.nomScientifique}}
+                </p>
+            </div>
+            <a routerLink="#" class="btn btn-primary card-padding">Consulter</a>
+        </div>
+        </div> 
+    </div>
+</div>

@@ -1,0 +1,215 @@
+<!--
+<div class="container">
+	<div>
+	  <h1>Formulaire de modification d'une institution</h1>
+	  <form [formGroup]="modifyForm" (ngSubmit)="onSubmit()">
+		<div class="form-group">
+		  <label for="nom">Nom</label>
+		  <input type="text" class="form-control" id="nom"
+				 required
+				 [(ngModel)]="institution.nom" name="nom"
+               	 formControlName="nom"
+				 >
+				
+		 
+		</div>
+
+		<div class="form-group">
+			<label for="raisonSociale">Raison sociale</label>
+			<input type="text" class="form-control" id="raisonSociale"
+			required
+			>
+		  </div>
+		  <div class="form-group">
+			<label for="statutJuridique">Statut juridique</label>
+			<input type="text" class="form-control" id="statutJuridique"
+			required
+			>
+		  </div>
+  
+		<div class="form-group">
+		  <label for="natureEtabelissement">Nature de l'établissement</label>
+		  <input type="text" class="form-control" id="natureEtabelissement"
+		  required
+		  >
+		</div>
+		<div class="form-group">
+			<label for="dateCreation">Date de création</label>
+			<input type="date" class="form-control" id="dateCreation"
+			required
+			>
+		</div>
+		<div class="form-group">
+			<label for="categorie">Catégorie</label>
+			<input type="text" class="form-control" id="categorie"
+			required
+			>
+		</div>
+		<div class="form-group">
+			<label for="type">Type</label>
+			<input type="text" class="form-control" id="type"
+			required
+			>
+		</div>
+		<div class="form-group">
+			<label for="secteurActivite">Secteur d'activité</label>
+			<input type="text" class="form-control" id="secteurActivite"
+			required
+			>
+		</div>
+		<div class="form-group">
+			<label for="siteWeb">Site web</label>
+			<input type="text" class="form-control" id="siteWeb"
+			required
+			>
+		</div>
+		<div class="form-group">
+			<label for="email">Email</label>
+			<input type="email" class="form-control" id="email"
+			required
+			>
+		</div>
+		<div class="form-group">
+			<label for="telFixe">Téléphone fixe</label>
+			<input type="text" class="form-control" id="telFixe"
+			required
+			>
+		</div>
+		<div class="form-group">
+			<label for="telPortable">Téléphone portable</label>
+			<input type="text" class="form-control" id="telPortable"
+			required
+			>
+		</div>
+
+		<div class="form-group">
+			<label for="fax">Fax</label>
+			<input type="text" class="form-control" id="fax"
+			required
+			>
+		</div>
+		<div class="form-group">
+			<label for="typeImplicationApa">Type d'implication APA</label>
+			<input type="text" class="form-control" id="typeImplicationApa"
+			required
+			>
+		</div>
+		<div class="form-group">
+			<label for="anneeImplicationApa">Année d'implication APA</label>
+			<input type="text" class="form-control" id="anneeImplicationApa"
+			required
+			>
+		</div>
+		<div class="form-group">
+			<label for="infoAdditionnelles">Informations additionnelles</label>
+			<input type="text" class="form-control" id="infoAdditionnelles"
+			required
+			>
+		</div> 
+
+
+  
+  
+	
+  
+		<button type="submit" class="btn btn-success">Submit</button>
+	  </form>
+	</div> 
+  
+	<div [hidden]="!submitted">
+	  <h2>You submitted the following:</h2>
+	  <div class="row">
+		<div class="col-xs-3">Name</div>
+		<div class="col-xs-9">{{ institution.nom }}</div>
+	  </div>
+	  <div class="row">
+		<div class="col-xs-3">Raison sociale</div>
+		<div class="col-xs-9">{{ institution.raisonSociale }}</div>
+	  </div>
+	
+	  <br>
+	  <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+	</div>
+  </div> -->
+
+
+<form [formGroup]="modifyForm" style="margin: 5%">
+	<div class="form-row">
+		<div class="form-group col-md-12">
+			<label for="inputAddress ">Nom de l'insitution</label>
+			<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="inputAddress">Raison sociale</label>
+			<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="inputAddress">Statut juridique</label>
+			<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="inputState">Nature de l'établissement</label>
+			<select id="inputEtat" class="form-control">
+				<option selected>Nature 1</option>
+				<option>Nature 2</option>
+				<option>Nature 3</option>
+			</select>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="inputAddress">Date de création</label>
+			<input type="date" class="form-control" id="inputAddress" placeholder="1234 Main St">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="inputState">Catégorie</label>
+			<select id="inputEtat" class="form-control">
+				<option selected>Catégorie 1</option>
+				<option>Catégorie 2</option>
+				<option>Catégorie 3</option>
+			</select>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="inputState">Type</label>
+			<select id="inputEtat" class="form-control">
+				<option selected>Type 1</option>
+				<option>Type 2</option>
+				<option>Type 3</option>
+			</select>
+		</div>
+		<div class="form-group col-md-12">
+			<label for="inputPassword4">Secteur d'activité</label>
+			<input type="text" class="form-control" id="inputPassword4" placeholder="Password">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="inputEmail4">Email</label>
+			<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="inputEmail4">Site web</label>
+			<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+		</div>
+		<div class="form-group col-md-4">
+			<label for="inputEmail4">Téléphone fix</label>
+			<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+		</div>
+		<div class="form-group col-md-4">
+			<label for="inputEmail4">Téléphone portable</label>
+			<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+		</div>
+		<div class="form-group col-md-4">
+			<label for="inputEmail4">Fax</label>
+			<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="inputState">Type d'implication APA</label>
+			<select id="inputEtat" class="form-control">
+				<option selected>Recherche</option>
+				<option>Éducation</option>
+			</select>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="inputAddress">Date de création</label>
+			<input type="date" class="form-control" id="inputAddress" placeholder="1234 Main St">
+		</div>
+	</div>	 
+	<button type="submit" class="btn btn-primary" (ngSubmit)="onSubmit()">Sign in</button>
+</form>

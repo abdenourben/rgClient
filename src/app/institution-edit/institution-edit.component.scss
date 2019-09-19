@@ -1,0 +1,164 @@
+* { box-sizing: border-box; }
+.transition { transition: all .1s ease; }
+.clearfix {
+	&:after {
+  		content: "";
+  		display: table;
+  		clear: both;
+	}
+}
+
+body { 
+	//background-color: #e6e6e6;
+   background: linear-gradient(45deg, #FFEEEE 10%, #DDEFBB 90%);
+	font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+	font-weight:300;
+	color: #0b8557;
+}
+
+.container {
+	@extend .clearfix;
+	display: block;
+	margin: 50px auto;
+	max-width: 700px;
+	//background-color: white;
+}
+
+// field structure
+.field {
+	position: relative;
+	//display: inline-block;
+	float: left;
+	
+	.helptext {
+		font-size: 14px;
+		color: #888;
+		font-style: italic;
+		margin: 0;
+		padding: 10px;
+	}
+	
+	&--quarter { width: 25%; }
+	
+	&--half {
+		width: 50%;
+		
+		//&:nth-of-type(even) { margin-left: -1px; }
+		//&:nth-of-type(n+3) { margin-top: -1px; }
+		&.form-action {
+			border-top-color: transparent;
+			padding-top: 10px;
+		}
+	}
+	
+	&--three-quarter { width: 75%; }
+	
+	&--block {
+		width: 100%;
+		//&:nth-of-type(n+2) { margin-top: -1px; }	
+		&.form-action {
+			padding-top: 15px;
+			margin-top: 15px;
+			border-top: 1px solid #0b8557;
+
+		}
+	}
+	
+	&__label {
+		@extend .transition;
+		position: absolute;
+		top: 5px; left: 10px;
+		font-size: 12px;
+		color: #888;
+	}
+	&__input {		
+		@extend .transition;
+		padding: 25px 10px 10px;
+		width: 100%;
+		background-color: #f2f2f2;
+	}
+			
+	.btn {
+		float: right;
+		color: white;
+		font-size: 11px;
+		padding: 1em 2em;
+		margin: 0;
+		
+	}
+	.btn-success{
+		background-color: #0b8557 !important;
+		margin-left: 1%;
+	}
+}
+
+// input styles
+.input {
+	outline: 0;
+	border: 1px solid #ccc;
+	
+	// general focus state
+	&:focus {
+		background-color: white;
+		border-color: #0b8557;
+		//box-shadow: inset 0 0 0 2px #E3EACC;
+		
+		~ label {
+			color: #4CAF58;
+		}
+	}
+	
+	/*&--text {	}*/
+	&--textarea {
+		max-width: 100%;
+		height: 100px;
+		max-height: 100px;
+	}
+	&--select {
+		padding-right: 20px;
+	}
+	/*
+	&--checkbox {}
+	&--radio {}
+	&--disabled {}	*/
+}
+
+// specific label styles
+.label {
+	&--required {
+		&:after {
+			content:"*";
+			color: tomato;
+			margin-left: 5px;
+		}
+	}
+}
+
+
+label{margin-left: 20px;}
+#datepicker{width:180px; margin: 0 20px 20px 20px;}
+#datepicker > span:hover{cursor: pointer;}
+
+
+#description{
+	height: 63px !important;
+}
+/*
+input#file {
+  display: inline-block;
+  width: 100%;
+  padding: 120px 0 0 0;
+  height: 100px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698394-icon-130-cloud-upload-512.png') center center no-repeat #e4e4e4;
+  background-size: 60px 60px;
+}*/
+#taaa{
+	height: 64px;
+}
