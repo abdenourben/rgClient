@@ -19,7 +19,7 @@ import { EventComponent } from './event/event.component';
 import { AddeventComponent } from './addevent/addevent.component';
 import { AdminComponent } from './admin/admin.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from '../app/_helpers/error.interceptor';
 import { JwtInterceptor } from '../app/_helpers/jwt.interceptor';
@@ -43,6 +43,12 @@ import { RgAnimaleDetailsComponent } from './rg-animale-details/rg-animale-detai
 import { RgForetDetailsComponent } from './rg-foret-details/rg-foret-details.component';
 import { RgMarineDetailsComponent } from './rg-marine-details/rg-marine-details.component';
 import { RgMicroDetailsComponent } from './rg-micro-details/rg-micro-details.component';
+
+import { AddUserComponent } from './users/add-user/add-user.component'
+import { DeleteUserComponent } from './users/delete-user/delete-user.component'
+import { UsersComponent } from './users/users.component';
+import { LoadingComponent } from './loading/loading.component';
+
 
 
 @NgModule({
@@ -81,10 +87,17 @@ import { RgMicroDetailsComponent } from './rg-micro-details/rg-micro-details.com
     RgForetDetailsComponent,
     RgMarineDetailsComponent,
     RgMicroDetailsComponent,
+    UsersComponent,
+    AddUserComponent,
+    DeleteUserComponent,
+    LoadingComponent,
+    
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule

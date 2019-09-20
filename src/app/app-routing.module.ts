@@ -30,6 +30,7 @@ import { RgForetDetailsComponent } from './rg-foret-details/rg-foret-details.com
 import { RgMicroDetailsComponent } from './rg-micro-details/rg-micro-details.component';
 import { RgMarineDetailsComponent } from './rg-marine-details/rg-marine-details.component';
 import { RgAnimaleDetailsComponent } from './rg-animale-details/rg-animale-details.component';
+import { UsersComponent } from './users/users.component';
 const routes: Routes = [
   //{path: '',redirectTo: 'home', pathMatch: 'full'},
   {
@@ -53,21 +54,22 @@ const routes: Routes = [
   {path: 'institution/:id', component: InstitutionDetailComponent}, 
   {path: 'institution/edit/:id', component: InstitutionEditComponent },
   {path: 'rg/marine', component: RgMarineComponent }, 
-  {path: 'rg/marine/detail', component:RgMarineDetailsComponent},
+  {path: 'rg/marine/:id', component:RgMarineDetailsComponent},
   {path: 'rg/foret', component: RgForetComponent }, 
-  {path: 'rg/foret/detail', component: RgForetDetailsComponent},
+  {path: 'rg/foret/:id', component: RgForetDetailsComponent},
   {path: 'rg/micro', component: RgMicroComponent }, 
-  {path: 'rg/micro/detail', component: RgMicroDetailsComponent},
+  {path: 'rg/micro/:id', component: RgMicroDetailsComponent},
   {path: 'rg/alimentaire', component: RgAlimentaireComponent },
-  {path: 'rg/alimentaire/detail', component: RgAlimentaireDetailsComponent}, 
+  {path: 'rg/alimentaire/:id', component: RgAlimentaireDetailsComponent}, 
   {path: 'rg/animale', component: RgAnimaleComponent }, 
-  {path: 'rg/animale/detail', component: RgAnimaleDetailsComponent},
+  {path: 'rg/animale/:id', component: RgAnimaleDetailsComponent},
   {
     path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuard],
     data: { roles: [Role.Admin] }
   },
+  {path: 'admin/users',component:UsersComponent},
 
   { path: '**', redirectTo: '' },
 

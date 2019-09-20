@@ -1,0 +1,114 @@
+<div class="mmodal-content col col-sm-6 bg-light px-4  py-3 ">
+  <form
+    class="d-flex flex-column justify-content-center align-items-center"
+    #form
+  >
+    <img
+      class="user-image"
+      src="https://pngimage.net/wp-content/uploads/2018/06/logo-user-png-6.png"
+    />
+    <p class="h5 m-1">Create new Account</p>
+    <p class="h6 text-muted m-0">Enter your credentials bellow</p>
+    <hr class="w-100 my-2" />
+    <div class="w-100 d-flex mt-3">
+      <input
+        required
+        name="nom"
+        id="nom"
+        type="text"
+        [(ngModel)]="user.nom"
+        class="form-control rounded-input mr-3"
+        placeholder="Nom"
+      />
+      <input
+        type="prenom"
+        name="prenom"
+        [(ngModel)]="user.prenom"
+        id="prenom"
+        class="form-control rounded-input "
+        placeholder="Prenom"
+      />
+    </div>
+    <input
+      type="email"
+      name="emial"
+      pattern="[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-z0-9-]+(\.[a-z0-9-]+)*"
+      [ngClass]="{
+        'form-control w-100  mt-3 rounded-input': true,
+        'border-danger': !regex.test(user.email)
+      }"
+      id="email"
+      [(ngModel)]="user.email"
+      placeholder="Email"
+    />
+    <small *ngIf="!user.email" class="w-100 form-text text-danger">
+      * must be a valid email
+    </small>
+    <input
+      type="password"
+      name="password"
+      id="password"
+      [(ngModel)]="user.password"
+      [ngClass]="{
+        'form-control': true,
+        'rounded-input': true,
+        'w-100': true,
+        'mt-3': true,
+        'border-danger': user.password !== user.confirmPassword,
+        'border-success': user.password == user.confirmPassword && user.password
+      }"
+      placeholder="Password"
+    />
+    <small *ngIf="!user.password" class="w-100 form-text text-danger">
+      * required
+    </small>
+    <input
+      type="password"
+      name="confirmPassword"
+      id="confirm-password"
+      [(ngModel)]="user.confirmPassword"
+      [ngClass]="{
+        'form-control': true,
+        'rounded-input': true,
+        'w-100': true,
+        'mt-3': true,
+        'border-danger': user.password !== user.confirmPassword,
+        'border-success':
+          user.password == user.confirmPassword && !!user.confirmPassword
+      }"
+      placeholder="Confirm Password"
+    />
+
+    <small
+      *ngIf="user.password !== user.confirmPassword || !user.confirmPassword"
+      class="w-100 form-text text-danger"
+    >
+      * must be same as password
+    </small>
+    <div class="w-100 d-flex mt-3 justify-content-end align-items-center">
+      <input
+        value="Cancel "
+        type="submit"
+        [disabled]="submitting"
+        (click)="cancel()"
+        class="rounded-input font-weight-bold btn btn-danger mt-3 px-5"
+      />
+      <button
+        (click)="submit()"
+        [disabled]="
+          submitting ||
+          (!regex.test(user.email) ||
+            user.password !== user.confirmPassword ||
+            !user.password ||
+            !user.confirmPassword)
+        "
+        class="rounded-input d-flex align-items-center font-weight-bold btn btn-primary mt-3 mx-3 px-5"
+      >
+        <span *ngIf="submitting" class="mr-1"
+          ><app-loading size="small"></app-loading
+        ></span>
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

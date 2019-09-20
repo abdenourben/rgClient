@@ -1,0 +1,10 @@
+.mmodal-content {
+}
+.user-image {
+  max-width: 76px;
+  max-height: 76px;
+}
+
+.rounded-input {
+  border-radius: 12px;
+}

@@ -1,0 +1,35 @@
+<div class="mmodal-content col col-sm-6 rounded bg-light px-4  py-3 ">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <img class="user-image rounded-circle" [src]="user.image" />
+    <p class="h4 mt-3">{{ user.name }}</p>
+    <hr class="w-100" />
+    <p class="h5 text-danger">Delete User</p>
+    <p class="h6 text-muted m-0">
+      Are you sure you want to Delete this Account?? this will delete the
+      account permanently without return
+    </p>
+  </div>
+  <div class="w-100 d-flex mt-3 justify-content-center">
+    <button
+      type="cancel"
+      [disabled]="deleting"
+      (click)="cancel()"
+      class="rounded-input font-weight-bold btn btn-danger mt-3 px-5"
+    >
+      <i class="fa fa-remove  fa-1x m-2 "></i>
+      Cancel
+    </button>
+
+    <button
+      (click)="deleteUser()"
+      [disabled]="deleting"
+      class="rounded-input d-flex align-items-center font-weight-bold btn btn-primary mt-3 mx-3 px-5"
+    >
+      <span *ngIf="deleting" class="mr-1"
+        ><app-loading size="small"></app-loading
+      ></span>
+      <i class="fas fa-trash  fa-1x m-2 text-danger"></i>
+      Delete
+    </button>
+  </div>
+</div>

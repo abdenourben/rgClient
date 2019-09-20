@@ -1,14 +1,25 @@
-#carousel-example-1z{
-    padding: 1%;
+#carouselExampleControls{
+    margin-right : 5%;
+    margin-left : 5%;
+    margin-top: 0.1%; 
+}
+
+.my-5{
+    background-color: red;
+    margin-right: 5%;
+    margin-left: 5%;
+    background-color:  #ebf9eb
+}
+
+.controls-top{
+    text-align: center;
+}
+
+.carousel-indicators{
+    margin: 5%;
 }
 
 #carousel-with-lb{
-    padding-left: 15%;
-    padding-right: 15%;
+    margin-left: 4%;
+    margin-right: 4%;
 }
-
-.card-deck{
-    padding-left: 15%;
-    padding-right: 15%;
-}
-
