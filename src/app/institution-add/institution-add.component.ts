@@ -24,7 +24,17 @@ export class InstitutionAddComponent implements OnInit {
       raisonSociale: ['', Validators.required], 
       statutJuridique: ['', Validators.required], 
       natureEtabelissement: ['', Validators.required], 
-      categorie: ['', Validators.required]
+      categorie: ['', Validators.required],
+      dateCreation: ['', Validators.required], 
+      secteurActivite: ['', Validators.required], 
+      siteWeb: ['', Validators.required], 
+      email: ['', Validators.required],
+      telFixe: ['', Validators.required],
+      telPortable: ['', Validators.required],
+      fax: ['', Validators.required],
+      typeImplicationApa: ['', Validators.required],
+      anneeImplicationApa: ['', Validators.required],
+      infoAdditionnelles: ['', Validators.required],
     });
   }
 
@@ -32,7 +42,7 @@ export class InstitutionAddComponent implements OnInit {
     this.institutionService.addInstitution(this.addForm.value)
     .subscribe(
       data => {
-        this.router.navigate(['/home'])
+        this.router.navigate(['/institution'])
       }
     );
     }

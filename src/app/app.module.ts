@@ -31,8 +31,6 @@ import { RgAlimentaireComponent } from './rg-alimentaire/rg-alimentaire.componen
 import { RgForetComponent } from './rg-foret/rg-foret.component';
 import { RgAnimaleComponent } from './rg-animale/rg-animale.component';
 import { RgMicroComponent } from './rg-micro/rg-micro.component';
-import { InstitutiondetailcontactComponent } from './institutiondetailcontact/institutiondetailcontact.component';
-import { InstitutiondetailprofileComponent } from './institutiondetailprofile/institutiondetailprofile.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { InstitutionEditComponent } from './institution-edit/institution-edit.component';
@@ -76,8 +74,6 @@ import { LoadingComponent } from './loading/loading.component';
     RgForetComponent,
     RgAnimaleComponent,
     RgMicroComponent,
-    InstitutiondetailcontactComponent,
-    InstitutiondetailprofileComponent,
     InstitutionEditComponent,
     InstitutionAddComponent,
     RgAlimentaireDetailsComponent,
