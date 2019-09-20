@@ -31,13 +31,15 @@ import { RgAlimentaireComponent } from './rg-alimentaire/rg-alimentaire.componen
 import { RgForetComponent } from './rg-foret/rg-foret.component';
 import { RgAnimaleComponent } from './rg-animale/rg-animale.component';
 import { RgMicroComponent } from './rg-micro/rg-micro.component';
-import { InstitutiondetailcontactComponent } from './institutiondetailcontact/institutiondetailcontact.component';
-import { InstitutiondetailprofileComponent } from './institutiondetailprofile/institutiondetailprofile.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { InstitutionEditComponent } from './institution-edit/institution-edit.component';
 import { InstitutionAddComponent } from './institution-add/institution-add.component';
-import { InstitutionAjouterComponent } from './institution-ajouter/institution-ajouter.component';
+import { RgMarineAddComponent } from './rg-marine-add/rg-marine-add.component';
+import { RgAliemntaireAddComponent } from './rg-aliemntaire-add/rg-aliemntaire-add.component';
+import { RgForetAddComponent } from './rg-foret-add/rg-foret-add.component';
+import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
+import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component';
 
 
 @NgModule({
@@ -66,11 +68,13 @@ import { InstitutionAjouterComponent } from './institution-ajouter/institution-a
     RgForetComponent,
     RgAnimaleComponent,
     RgMicroComponent,
-    InstitutiondetailcontactComponent,
-    InstitutiondetailprofileComponent,
     InstitutionEditComponent,
     InstitutionAddComponent,
-    InstitutionAjouterComponent,
+    RgMarineAddComponent,
+    RgAliemntaireAddComponent,
+    RgForetAddComponent,
+    RgMicroAddComponent,
+    RgAnimaleAddComponent,
   ],
   imports: [
     BrowserModule,

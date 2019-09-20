@@ -24,7 +24,7 @@ import { RgAnimaleComponent } from './rg-animale/rg-animale.component';
 import { RgForetComponent } from './rg-foret/rg-foret.component'; 
 import { InstitutionEditComponent } from './institution-edit/institution-edit.component'; 
 import { InstitutionAddComponent } from './institution-add/institution-add.component'; 
-import { InstitutionAjouterComponent } from './institution-ajouter/institution-ajouter.component';
+import { RgMarineAddComponent } from './rg-marine-add/rg-marine-add.component'; 
 const routes: Routes = [
   //{path: '',redirectTo: 'home', pathMatch: 'full'},
   {
@@ -44,10 +44,11 @@ const routes: Routes = [
   {path: 'evenements', component: EventComponent},
   {path: 'evenements/ajouterevenements', component: AddeventComponent},
   {path: 'institution', component: InstitutionComponent},
-  { path: 'institution/ajouter', component: InstitutionAddComponent }, 
+  { path: 'institution/add', component: InstitutionAddComponent }, 
   { path: 'institution/:id', component: InstitutionDetailComponent}, 
   { path: 'institution/edit/:id', component: InstitutionEditComponent },
   { path: 'rg/marine', component: RgMarineComponent }, 
+  { path: 'rg/marine/add', component: RgMarineAddComponent }, 
   { path: 'rg/foret', component: RgForetComponent }, 
   { path: 'rg/micro', component: RgMicroComponent }, 
   { path: 'rg/alimentaire', component: RgAlimentaireComponent }, 
