@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InstitutionAjouterComponent } from './institution-ajouter.component';
+import { RgMicroAddComponent } from './rg-micro-add.component';
 
-describe('InstitutionAjouterComponent', () => {
-  let component: InstitutionAjouterComponent;
-  let fixture: ComponentFixture<InstitutionAjouterComponent>;
+describe('RgMicroAddComponent', () => {
+  let component: RgMicroAddComponent;
+  let fixture: ComponentFixture<RgMicroAddComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InstitutionAjouterComponent ]
+      declarations: [ RgMicroAddComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InstitutionAjouterComponent);
+    fixture = TestBed.createComponent(RgMicroAddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

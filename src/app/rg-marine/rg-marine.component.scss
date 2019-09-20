@@ -1,5 +1,5 @@
 .container {
-    margin-left: 25em; 
+    margin-left: 20em; 
 }
 
 .card {
@@ -40,8 +40,8 @@
 .navigation {
   width: 300px;
   position: absolute;
-  margin-left: 5em; 
-  margin-top: 100px; 
+  margin-left: 1em; 
+  margin-top: 110px; 
 }
 
 /* reset our lists to remove bullet points and padding */
@@ -99,4 +99,9 @@
   -webkit-transition: all 0.5s ease-out;
 }
 
+.button-aj {
+  position: absolute;
+  margin-left: 20px; 
+  margin-top: 30px;
+}
 
