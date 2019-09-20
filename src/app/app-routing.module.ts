@@ -24,7 +24,6 @@ import { RgAnimaleComponent } from './rg-animale/rg-animale.component';
 import { RgForetComponent } from './rg-foret/rg-foret.component'; 
 import { InstitutionEditComponent } from './institution-edit/institution-edit.component'; 
 import { InstitutionAddComponent } from './institution-add/institution-add.component'; 
-import { InstitutionAjouterComponent } from './institution-ajouter/institution-ajouter.component';
 import { RgAlimentaireDetailsComponent } from './rg-alimentaire-details/rg-alimentaire-details.component';
 import { RgForetDetailsComponent } from './rg-foret-details/rg-foret-details.component';
 import { RgMicroDetailsComponent } from './rg-micro-details/rg-micro-details.component';
