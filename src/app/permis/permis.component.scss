@@ -1,11 +1,14 @@
 .btn, 
 .btn-success{
     background-color: #0b8557 !important;
-    text-align: center !important;
+    text-align: left !important;
+    float: left;
     margin: 0 auto;
     display: block;
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 20px;
     margin-bottom: 3%;
+}
+.a{
+    padding-bottom: 15px;
 }
 
