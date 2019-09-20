@@ -45,6 +45,11 @@ import { AddUserComponent } from './users/add-user/add-user.component'
 import { DeleteUserComponent } from './users/delete-user/delete-user.component'
 import { UsersComponent } from './users/users.component';
 import { LoadingComponent } from './loading/loading.component';
+import { RgAliemntaireAddComponent } from './rg-aliemntaire-add/rg-aliemntaire-add.component';
+import { RgMarineAddComponent } from './rg-marine-add/rg-marine-add.component';
+import { RgForetAddComponent } from './rg-foret-add/rg-foret-add.component';
+import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
+import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component';
 
 
 
@@ -85,7 +90,11 @@ import { LoadingComponent } from './loading/loading.component';
     AddUserComponent,
     DeleteUserComponent,
     LoadingComponent,
-    
+    RgAliemntaireAddComponent,
+    RgMarineAddComponent,
+    RgForetAddComponent,
+    RgMicroAddComponent,
+    RgAnimaleAddComponent,
    
   ],
   imports: [

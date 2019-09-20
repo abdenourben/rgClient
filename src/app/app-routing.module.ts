@@ -30,6 +30,11 @@ import { RgMicroDetailsComponent } from './rg-micro-details/rg-micro-details.com
 import { RgMarineDetailsComponent } from './rg-marine-details/rg-marine-details.component';
 import { RgAnimaleDetailsComponent } from './rg-animale-details/rg-animale-details.component';
 import { UsersComponent } from './users/users.component';
+import { RgMarineAddComponent } from './rg-marine-add/rg-marine-add.component';
+import { RgForetAddComponent } from './rg-foret-add/rg-foret-add.component';
+import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
+import { RgAliemntaireAddComponent } from './rg-aliemntaire-add/rg-aliemntaire-add.component';
+import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component';
 const routes: Routes = [
   //{path: '',redirectTo: 'home', pathMatch: 'full'},
   {
@@ -53,14 +58,19 @@ const routes: Routes = [
   {path: 'institution/:id', component: InstitutionDetailComponent}, 
   {path: 'institution/edit/:id', component: InstitutionEditComponent },
   {path: 'rg/marine', component: RgMarineComponent }, 
+  {path: 'rg/marine/ajouter', component:RgMarineAddComponent},
   {path: 'rg/marine/:id', component:RgMarineDetailsComponent},
   {path: 'rg/foret', component: RgForetComponent }, 
+  {path: 'rg/foret/ajouter', component: RgForetAddComponent},
   {path: 'rg/foret/:id', component: RgForetDetailsComponent},
   {path: 'rg/micro', component: RgMicroComponent }, 
+  {path: 'rg/micro/ajouter',component:RgMicroAddComponent},
   {path: 'rg/micro/:id', component: RgMicroDetailsComponent},
   {path: 'rg/alimentaire', component: RgAlimentaireComponent },
+  {path: 'rg/alimentaire/ajouter',component:RgAliemntaireAddComponent},
   {path: 'rg/alimentaire/:id', component: RgAlimentaireDetailsComponent}, 
   {path: 'rg/animale', component: RgAnimaleComponent }, 
+  {path: 'rg/animale/ajouter',component:RgAnimaleAddComponent},
   {path: 'rg/animale/:id', component: RgAnimaleDetailsComponent},
   {
     path: 'admin',
