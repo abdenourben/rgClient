@@ -35,6 +35,8 @@ import { RgForetAddComponent } from './rg-foret-add/rg-foret-add.component';
 import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
 import { RgAliemntaireAddComponent } from './rg-aliemntaire-add/rg-aliemntaire-add.component';
 import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component';
+import { WorkflowListComponent } from './workflow-list/workflow-list.component';
+import { WorkflowComponent } from './workflow/workflow.component';
 const routes: Routes = [
   //{path: '',redirectTo: 'home', pathMatch: 'full'},
   {
@@ -79,8 +81,10 @@ const routes: Routes = [
     data: { roles: [Role.Admin] }
   },
   {path: 'admin/users',component:UsersComponent},
+  {path: 'workflow', component: WorkflowListComponent },
+  {path: 'workflow/:worflowId', component: WorkflowComponent },
 
-  { path: '**', redirectTo: '' },
+  {path: '**', redirectTo: '' },
 
 ];
 
