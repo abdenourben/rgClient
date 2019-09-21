@@ -34,8 +34,16 @@
             <input type="text" formControlName="formuleChimique" class="form-control" id="formuleChimique" placeholder="">
         </div>
         <div class="form-group col-md-12">
-            <label for="structure">Structure</label>
-            <input type="text" formControlName="structure" class="form-control" id="structure" placeholder="">
+            <label for="etatRisque">État de risque</label>
+            <select id="etatRisque" formControlName="etatRisque" class="form-control">
+                <option selected>Inconnu</option>
+                <option>Critique</option>
+                <option>Maintenu critique</option>
+                <option>En voie de disparition</option>
+                <option>En voie de disparition entretenue</option>
+                <option>Disparu</option>
+                <option>Pas à risque</option>
+            </select>
         </div>
         <div class="form-group col-md-12">
             <label for="environnement">Environnement</label>
@@ -48,14 +56,6 @@
         <div class="form-group col-md-12">
             <label for="cycleVie">Cycle de vie</label>
             <input type="text" formControlName="cycleVie" class="form-control" id="cycleVie" placeholder="">
-        </div>
-        <div class="form-group col-md-12">
-            <label for="marine">Marine</label>
-            <input type="text" formControlName="marine" class="form-control" id="marine" placeholder="">
-        </div>
-        <div class="form-group col-md-12">
-            <label for="genre2">Marine</label>
-            <input type="text" formControlName="genre2" class="form-control" id="genre2" placeholder="">
         </div>
         <div class="form-group col-md-12">
             <label for="taxonomie">Taxonomie</label>

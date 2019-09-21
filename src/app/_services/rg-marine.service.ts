@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { RgMarine } from '../_models/rg_marine'; 
 import { environment } from 'src/environments/environment'; 
 import { RgInstitutionObject } from '../_models/RgInstitutionObject';
+import { RgITO } from '../_models/RgITO';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,12 @@ export class RgMarineService {
     return this.http.get<RgMarine>(`${environment.apiUrl}/rg/marine/${id}`);
   }
 
-  AddRgMarine(rgInstitutionObject: RgInstitutionObject) {
-    return this.http.post<RgInstitutionObject>(`${environment.apiUrl}/rg/marine`, rgInstitutionObject); 
+  AddRgMarine(rgITO: RgITO) {
+    return this.http.post<RgITO>(`${environment.apiUrl}/rg/marine-multi`, rgITO); 
+  }
+
+  AddRgMarineO(rgITO: RgInstitutionObject) {
+    return this.http.post<RgInstitutionObject>(`${environment.apiUrl}/rg/marine`, rgITO); 
   }
 
 }

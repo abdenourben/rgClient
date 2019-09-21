@@ -7,6 +7,7 @@ import { Institution } from '../_models/institution';
 import { InstitutionService } from '../_services/institution.service';
 import { RgInstitutionObject } from '../_models/RgInstitutionObject';
 import { Taxonomie } from '../_models/taxonomie';
+import { RgITO } from '../_models/RgITO';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class RgMarineAddComponent implements OnInit {
   newInstitution: Institution;  
   rInstitution: Institution;  
   rgInstitutionObject: RgInstitutionObject;
+  rgITO: RgITO; 
   addRgMarineForm: FormGroup; 
   addInstitutionForm: FormGroup;
   taxonomie: Taxonomie; 
@@ -41,12 +43,12 @@ export class RgMarineAddComponent implements OnInit {
       description: ['', Validators.required],
       morphologie: ['', Validators.required],
       formuleChimique: ['', Validators.required], 
-      structure: ['', Validators.required],
       environnement: ['', Validators.required], 
-      transmission: ['', Validators.required], 
       cycleVie: ['', Validators.required], 
-      marine: ['', Validators.required], 
+      etatRisque: ['', Validators.required], 
+      transmission: ['', Validators.required], 
       institution: ['', Validators.required],
+      taxonomie: ['', Validators.required],
       espece: ['', Validators.required],
       genre: ['', Validators.required],
       famille: ['', Validators.required],
@@ -66,11 +68,10 @@ export class RgMarineAddComponent implements OnInit {
       this.addRgMarineForm.get("description").value,
       this.addRgMarineForm.get("morphologie").value,
       this.addRgMarineForm.get("formuleChimique").value,
-      this.addRgMarineForm.get("structure").value,
       this.addRgMarineForm.get("environnement").value,
-      this.addRgMarineForm.get("transmission").value,
       this.addRgMarineForm.get("cycleVie").value,
-      this.addRgMarineForm.get("marine").value,
+      this.addRgMarineForm.get("etatRisque").value,
+      this.addRgMarineForm.get("transmission").value,
       ); 
     console.log(this.newRgMarine);
 
@@ -89,9 +90,7 @@ export class RgMarineAddComponent implements OnInit {
       this.newInstitution.raisonSociale,
       this.newInstitution.statutJuridique,
       this.newInstitution.natureEtabelissement,
-      this.newInstitution.logoChemin, 
       this.newInstitution.categorie, 
-      this.newInstitution.type, 
       this.newInstitution.dateCreation, 
       this.newInstitution.secteurActivite, 
       this.newInstitution.siteWeb, 
@@ -103,21 +102,31 @@ export class RgMarineAddComponent implements OnInit {
       this.newInstitution.anneeImplicationApa,
       this.newInstitution.infoAdditionnelles,
     );
-    //console.log(this.rInstitution); 
+    console.log(this.rInstitution); 
 
   
 
 
 
    
-    this.rgInstitutionObject = new RgInstitutionObject(this.newRgMarine, this.rInstitution); 
-    //console.log(this.rgInstitutionObject); 
-    this.rgMarineService.AddRgMarine(this.rgInstitutionObject) 
+    //this.rgInstitutionObject = new RgInstitutionObject(this.newRgMarine, this.rInstitution); 
+    this.rgITO = new RgITO(this.newRgMarine, this.rInstitution, this.taxonomie); 
+    console.log(this.rgInstitutionObject); 
+
+
+    this.rgMarineService.AddRgMarine(this.rgITO) 
     .subscribe(
       data => {
         this.router.navigate(['/rg/marine'])
       }
     ); 
+
+    //this.rgMarineService.AddRgMarine(this.rgITO) 
+    //.subscribe(
+     // data => {
+       // this.router.navigate(['/rg/marine'])
+      //}
+    //); 
 
   }
 

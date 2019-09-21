@@ -1,1 +1,102 @@
-<p>rg-aliemntaire-add works!</p>
+<h3 class="title" style="margin-left: 5%; margin-top:3%"><b>Formulaire d'ajout d'une ressource génétique alimentaire</b></h3>
+
+<form [formGroup]="addRgAlimentaireForm" style="margin: 5%; margin-top:4%">
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="nomCommunFr">Nom commun en français</label>
+            <input type="text" formControlName="nomCommunFr" class="form-control" id="nomCommunFr" placeholder="">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="nomCommunAr">Nom commun en arabe</label>
+            <input type="text" formControlName="nomCommunAr" class="form-control" id="nomCommunAr" placeholder="">
+        </div>
+        <div class="form-group col-md-12">
+            <label for="nomScientifique">Nom scientifique</label>
+            <input type="text" formControlName="nomScientifique" class="form-control" id="nomScientifique" placeholder="">
+        </div>
+        <div class="form-group col-md-12">
+            <label for="institution">Institution</label>
+            <select id="institution" formControlName="institution" class="form-control">
+                <option selected *ngFor="let institution of institutions" (click)="getInsitution(institution.id)" >{{institution.nom}}</option>
+            </select>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="description">Description</label>
+            <textarea class="form-control" formControlName="description" id="description" rows="3"></textarea>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="morphologie">Morphologie</label>
+            <input type="text" formControlName="morphologie" class="form-control" id="morphologie" placeholder="">
+        </div>    
+        <div class="form-group col-md-12">
+            <label for="formuleChimique">Formule chimique</label>
+            <input type="text" formControlName="formuleChimique" class="form-control" id="formuleChimique" placeholder="">
+        </div>
+        <div class="form-group col-md-12">
+            <label for="etatRisque">État de risque</label>
+            <select id="etatRisque" formControlName="etatRisque" class="form-control">
+                <option selected>Inconnu</option>
+                <option>Critique</option>
+                <option>Maintenu critique</option>
+                <option>En voie de disparition</option>
+                <option>En voie de disparition entretenue</option>
+                <option>Disparu</option>
+                <option>Pas à risque</option>
+            </select>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="environnement">Environnement</label>
+            <input type="text" formControlName="environnement" class="form-control" id="environnement" placeholder="">
+        </div>
+        <div class="form-group col-md-12">
+            <label for="cycleVie">Cycle de vie</label>
+            <input type="text" formControlName="cycleVie" class="form-control" id="cycleVie" placeholder="">
+        </div>
+        <div class="form-group col-md-12">
+            <label for="taxonomie">Taxonomie</label>
+            <br>
+            <label for="espece" style="font-size: 12px;">Espèce</label>
+            <select id="espece" formControlName="espece" class="form-control">
+                <option selected>Céréales</option>
+                <option>Légumineuse alimentaire</option>
+                <option>Fourrage</option>
+                <option>Arboriculture fruitière et viticole</option>
+                <option>Cultures maraîchères</option>
+                <option>Cultures industrielles</option>
+            </select>
+            <label for="genre" style="font-size: 12px;">Genre</label>
+            <input type="text" formControlName="genre" class="form-control" id="genre" placeholder="">
+            <label for="famille" style="font-size: 12px;">Famille</label>
+            <input type="text" formControlName="famille" class="form-control" id="famille" placeholder="">
+            <label for="ordre" style="font-size: 12px;">Ordre</label>
+            <input type="text" formControlName="ordre" class="form-control" id="ordre" placeholder="">
+            <label for="classe" style="font-size: 12px;">Classe</label>
+            <input type="text" formControlName="classe" class="form-control" id="classe" placeholder="">
+
+        </div>
+        <div class="form-group col-md-12">
+            <label for="exploitation">Exploitation agricole</label>
+            <select id="exploitation" formControlName="exploitation" class="form-control">
+                <option selected>Exploitations publiques</option>
+                <option>Exploitations privées</option>
+                <option>Exploitations en location</option>
+                <option>Exploitations en association</option>
+                <option>Fermes pilotes</option>
+                <option>Exploitations agricoles sur des terres affectées aux établissements et orga-nismes publics</option>
+            </select>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="zone">Zone</label>
+            <select id="zone" formControlName="zone" class="form-control">
+                <option selected>Les zones côtières</option>
+                <option>Les zones de plaines</option>
+                <option>Les zones de montagne</option>
+                <option>Les zones steppiques</option>
+                <option>Les zones Sahariennes</option>
+            </select>
+        </div>
+    </div>	 
+    <br>
+    <button type="submit" class="btn btn-success" (click)="onSubmit()">Ajouter</button>
+</form>
