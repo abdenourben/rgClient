@@ -1,0 +1,43 @@
+
+<!-- Ceci est un composant de test qui permet à l'admin de valider les ressoirces génétiques -->
+
+
+
+
+<nav class="navigation">
+    <ul class="mainmenu">
+        <li><a href="">Taxonomie</a>
+            <ul class="submenu">
+                <li><a href="">Espèce</a></li>
+                <li><a href="">Gènes</a></li>
+            </ul>
+        </li>
+        <li><a href="">Distribution</a>
+            <ul class="submenu">
+                <li><a href="">Région</a></li>
+                <li><a href="">Wilaya</a></li>
+            </ul>
+        </li>
+        <li><a href="">Éditeurs</a></li>
+        <li><a href="">Contribuer</a></li>
+    </ul>
+</nav>
+<h2 class="title">LES RESSOURCES FORESTIÈRES</h2>
+<div class="container" >
+    <div class="row">
+        <button class="btn btn-warning float-right" > Ressources non validées </button>
+        <div class="col-lg-3 container-card" *ngFor="let rgForet of rgForets">
+            <div class="card">
+                <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title ">{{rgForet.nomCommunFr}}</h6>
+                    <p class="card-text">
+                        {{rgForet.nomScientifique}}
+                    </p>
+                </div>
+                <a routerLink="#" class="btn btn-primary card-padding">Consulter</a>
+                <a routerLink="#" class="btn btn-primary card-padding">Valider</a>
+            </div>
+        </div>
+    </div>
+</div>
