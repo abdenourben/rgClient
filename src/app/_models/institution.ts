@@ -4,9 +4,9 @@ export class Institution {
     raisonSociale: string; 
     statutJuridique: string; 
     natureEtabelissement: string; 
-    logoChemin: string; 
+    //logoChemin: string; 
     categorie: string; 
-    type: string; 
+    //type: string; 
 	dateCreation: Date;
 	secteurActivite: string;
 	siteWeb: string;
@@ -25,9 +25,9 @@ export class Institution {
 		raisonSociale: string, 
 		statutJuridique: string,
 		natureEtabelissement: string,
-		logoChemin: string,
+		//logoChemin: string,
 		categorie: string,
-		type: string,
+		//type: string,
 		dateCreation: Date,
 		secteurActivite: string,
 		siteWeb: string,
@@ -46,9 +46,9 @@ export class Institution {
 			this.raisonSociale = raisonSociale; 
 			this.statutJuridique = statutJuridique; 
 			this.natureEtabelissement = natureEtabelissement; 
-			this.logoChemin = logoChemin; 
+			//this.logoChemin = logoChemin; 
 			this.categorie = categorie; 
-			this.type = type; 
+			//this.type = type; 
 			this.dateCreation = dateCreation; 
 			this.secteurActivite = secteurActivite; 
 			this.siteWeb = siteWeb; 

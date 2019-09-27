@@ -6,8 +6,7 @@ export class Rg {
 	description: string;
     morphologie: string;
 	formuleChimique: string; 
-	structure: string;
 	environnement: string; 
-	transmission: string; 
 	cycleVie: string; 
+	etatRisque: string; 
 }

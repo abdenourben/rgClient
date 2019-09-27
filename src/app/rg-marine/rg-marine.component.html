@@ -22,14 +22,14 @@
     <div class="row">
         <div class="col-lg-3 container-card" *ngFor="let rgMarine of rgMarines">
         <div class="card">
-            <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" class="card-img-top" alt="...">
+            <img src="../../assets/img/no_image.jpg" class="card-img-top" alt="">
             <div class="card-body">
                 <h6 class="card-title ">{{rgMarine.nomCommunFr}}</h6>
                 <p class="card-text">
                 {{rgMarine.nomScientifique}}
                 </p>
             </div>
-            <a routerLink="/institution/{{rgMarine.id}}" class="btn btn-primary card-padding">Consulter</a>
+            <a routerLink="/rg/marine/{{rgMarine.id}}" class="btn btn-primary card-padding">Consulter</a>
         </div>
         </div> 
     </div>
