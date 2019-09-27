@@ -7,6 +7,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RgForetService } from '../_services/rg-foret.service';
 import { InstitutionService } from '../_services/institution.service';
 import { Router } from '@angular/router';
+import { RgTaxonomieObject } from '../_models/RgTaxonomieObject';
+import { RgForetTaxonomie } from '../_models/RgForetTaxonomie';
 
 @Component({
   selector: 'app-rg-foret-add',
@@ -15,17 +17,13 @@ import { Router } from '@angular/router';
 })
 export class RgForetAddComponent implements OnInit {
 
-  newRgForet: RgForet; 
-  institutions: Institution[]; 
-  newInstitution: Institution;  
-  rInstitution: Institution;  
-  rgFIT: RgFIT; 
+  newRgForet: RgForet;  
+  rgForetTaxonomie: RgForetTaxonomie; 
   addRgForetForm: FormGroup; 
   taxonomie: Taxonomie; 
 
   constructor(
     private rgForetService: RgForetService, 
-    private institutionService: InstitutionService, 
     private formBuilder: FormBuilder,
     private router: Router,
 
@@ -42,7 +40,6 @@ export class RgForetAddComponent implements OnInit {
       environnement: ['', Validators.required], 
       cycleVie: ['', Validators.required], 
       etatRisque: ['', Validators.required], 
-      institution: ['', Validators.required],
       taxonomie: ['', Validators.required],
       espece: ['', Validators.required],
       genre: ['', Validators.required],
@@ -50,7 +47,6 @@ export class RgForetAddComponent implements OnInit {
       ordre: ['', Validators.required],
       classe: ['', Validators.required],
     }); 
-    this.getInsitutions(); 
   }
 
   onSubmit() {
@@ -74,47 +70,15 @@ export class RgForetAddComponent implements OnInit {
       this.addRgForetForm.get("classe").value,
       ); 
       
-    this.rInstitution = new Institution(
-      this.newInstitution.id,
-      this.newInstitution.nom,
-      this.newInstitution.raisonSociale,
-      this.newInstitution.statutJuridique,
-      this.newInstitution.natureEtabelissement,
-      this.newInstitution.categorie, 
-      this.newInstitution.dateCreation, 
-      this.newInstitution.secteurActivite, 
-      this.newInstitution.siteWeb, 
-      this.newInstitution.email, 
-      this.newInstitution.telFixe, 
-      this.newInstitution.telPortable,
-      this.newInstitution.fax, 
-      this.newInstitution.typeImplicationApa, 
-      this.newInstitution.anneeImplicationApa,
-      this.newInstitution.infoAdditionnelles,
-    );
+    this.rgForetTaxonomie = new RgForetTaxonomie(this.newRgForet, this.taxonomie); 
 
-    this.rgFIT = new RgFIT(this.newRgForet, this.rInstitution, this.taxonomie); 
 
-    this.rgForetService.AddRgMarine(this.rgFIT) 
+    this.rgForetService.AddRgForet(this.rgForetTaxonomie) 
     .subscribe(
       data => {
         this.router.navigate(['/rg/foret'])
       }
     ); 
-  }
-
-  getInsitutions() {
-    this.institutionService.getAll()
-    .subscribe(
-      institutions => this.institutions = institutions
-    );
-  }
-
-  getInsitution(id: number): void {
-    this.institutionService.getDetailInstitution(id).
-    subscribe(
-      newInstitution => this.newInstitution = newInstitution
-    );
   }
 
 }

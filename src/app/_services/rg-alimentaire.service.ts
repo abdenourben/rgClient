@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { RgAlimentaire } from '../_models/rg_alimentaire';
 import { environment } from 'src/environments/environment';
 import { RgAO } from '../_models/rgAO';
+import { RgAlimentaireTaxonomie } from '../_models/RgAlimentaireTaxonomie';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class RgAlimentaireService {
     return this.http.get<RgAlimentaire>(`${environment.apiUrl}/rg/alimentaire/${id}`); 
   }
 
-  AddRgAlimentaire(rgAO: RgAO) {
-    return this.http.post<RgAO>(`${environment.apiUrl}/rg/alimentaire-multi`, rgAO); 
+  AddRgAlimentaire(rgAO: RgAlimentaireTaxonomie) {
+    return this.http.post<RgAlimentaireTaxonomie>(`${environment.apiUrl}/rg/alimentaire`, rgAO); 
   }
 }

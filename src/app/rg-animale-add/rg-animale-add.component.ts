@@ -7,6 +7,7 @@ import { Taxonomie } from '../_models/taxonomie';
 import { Router } from '@angular/router';
 import { InstitutionService } from '../_services/institution.service';
 import { RgAnimaleService } from '../_services/rg-animale.service';
+import { RgAnimaleTaxonomie } from '../_models/RgAnimaleTaxonomie';
 
 @Component({
   selector: 'app-rg-animale-add',
@@ -16,10 +17,7 @@ import { RgAnimaleService } from '../_services/rg-animale.service';
 export class RgAnimaleAddComponent implements OnInit {
 
   newRgAnimale: RgAnimale;  
-  institutions: Institution[]; 
-  newInstitution: Institution;  
-  rInstitution: Institution;  
-  rgAIT: RgAIT; 
+  rgAnimaleTaxonomie: RgAnimaleTaxonomie; 
   addRgAnimaleForm: FormGroup; 
   taxonomie: Taxonomie; 
 
@@ -41,7 +39,6 @@ export class RgAnimaleAddComponent implements OnInit {
       environnement: ['', Validators.required], 
       cycleVie: ['', Validators.required], 
       etatRisque: ['', Validators.required], 
-      institution: ['', Validators.required],
       taxonomie: ['', Validators.required],
       espece: ['', Validators.required],
       genre: ['', Validators.required],
@@ -53,7 +50,6 @@ export class RgAnimaleAddComponent implements OnInit {
       systemeProd: ['', Validators.required],
       conservation: ['', Validators.required],
     }); 
-    this.getInsitutions(); 
   }
 
   onSubmit() {
@@ -85,50 +81,17 @@ export class RgAnimaleAddComponent implements OnInit {
       this.addRgAnimaleForm.get("classe").value,
       ); 
 
-    this.rInstitution = new Institution(
-      this.newInstitution.id,
-      this.newInstitution.nom,
-      this.newInstitution.raisonSociale,
-      this.newInstitution.statutJuridique,
-      this.newInstitution.natureEtabelissement,
-      this.newInstitution.categorie, 
-      this.newInstitution.dateCreation, 
-      this.newInstitution.secteurActivite, 
-      this.newInstitution.siteWeb, 
-      this.newInstitution.email, 
-      this.newInstitution.telFixe, 
-      this.newInstitution.telPortable,
-      this.newInstitution.fax, 
-      this.newInstitution.typeImplicationApa, 
-      this.newInstitution.anneeImplicationApa,
-      this.newInstitution.infoAdditionnelles,
-    );
-
-    this.rgAIT = new RgAIT(this.newRgAnimale, this.rInstitution, this.taxonomie); 
+   
+    this.rgAnimaleTaxonomie = new RgAnimaleTaxonomie(this.newRgAnimale, this.taxonomie); 
 
 
-    this.RgAnimaleService.AddRgAnimale(this.rgAIT) 
+    this.RgAnimaleService.AddRgAnimale(this.rgAnimaleTaxonomie) 
     .subscribe(
       data => {
         this.router.navigate(['/rg/animale'])
       }
     );
 
-  }
-
-  getInsitutions() {
-    this.institutionService.getAll()
-    .subscribe(
-      institutions => this.institutions = institutions
-    );
-  }
-
-  getInsitution(id: number): void {
-    //const id = this.addRgMarineForm.get('institution').value; 
-    this.institutionService.getDetailInstitution(id).
-    subscribe(
-      newInstitution => this.newInstitution = newInstitution
-    );
   }
 
 }

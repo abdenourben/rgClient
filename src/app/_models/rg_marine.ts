@@ -1,6 +1,3 @@
-import { Institution } from "./institution"; 
-
-
 export class RgMarine {
 	//attributs communs
     id: number; 

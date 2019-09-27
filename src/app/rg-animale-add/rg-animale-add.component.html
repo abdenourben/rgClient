@@ -16,12 +16,6 @@
             <input type="text" formControlName="nomScientifique" class="form-control" id="nomScientifique" placeholder="">
         </div>
         <div class="form-group col-md-12">
-            <label for="institution">Institution</label>
-            <select id="institution" formControlName="institution" class="form-control">
-                <option selected *ngFor="let institution of institutions" (click)="getInsitution(institution.id)" >{{institution.nom}}</option>
-            </select>
-        </div>
-        <div class="form-group col-md-12">
             <label for="description">Description</label>
             <textarea class="form-control" formControlName="description" id="description" rows="3"></textarea>
         </div>

@@ -7,6 +7,7 @@ import { Taxonomie } from '../_models/taxonomie';
 import { InstitutionService } from '../_services/institution.service';
 import { Router } from '@angular/router';
 import { RgMicroService } from '../_services/rg-micro.service';
+import { RgMicroTaxonomie } from '../_models/RgMicroTaxonomie';
 
 @Component({
   selector: 'app-rg-micro-add',
@@ -15,11 +16,8 @@ import { RgMicroService } from '../_services/rg-micro.service';
 })
 export class RgMicroAddComponent implements OnInit {
 
-  newRgMicro: RgMicro; 
-  institutions: Institution[];
-  newInstitution: Institution;  
-  rInstitution: Institution;  
-  rgMTO: RgMTO; 
+  newRgMicro: RgMicro;  
+  rgMicroTaxonomie: RgMicroTaxonomie; 
   addRgMicroForm: FormGroup; 
   taxonomie: Taxonomie; 
 
@@ -52,7 +50,6 @@ export class RgMicroAddComponent implements OnInit {
       structure: ['', Validators.required],
       symptome: ['', Validators.required],
     }); 
-    this.getInsitutions(); 
   }
 
   onSubmit() {
@@ -80,28 +77,11 @@ export class RgMicroAddComponent implements OnInit {
       this.addRgMicroForm.get("classe").value,
       ); 
 
-    this.rInstitution = new Institution(
-      this.newInstitution.id,
-      this.newInstitution.nom,
-      this.newInstitution.raisonSociale,
-      this.newInstitution.statutJuridique,
-      this.newInstitution.natureEtabelissement,
-      this.newInstitution.categorie, 
-      this.newInstitution.dateCreation, 
-      this.newInstitution.secteurActivite, 
-      this.newInstitution.siteWeb, 
-      this.newInstitution.email, 
-      this.newInstitution.telFixe, 
-      this.newInstitution.telPortable,
-      this.newInstitution.fax, 
-      this.newInstitution.typeImplicationApa, 
-      this.newInstitution.anneeImplicationApa,
-      this.newInstitution.infoAdditionnelles,
-    );
 
-    this.rgMTO = new RgMTO(this.newRgMicro, this.rInstitution, this.taxonomie); 
 
-    this.rgMicroService.AddRgMicro(this.rgMTO) 
+    this.rgMicroTaxonomie = new RgMicroTaxonomie(this.newRgMicro, this.taxonomie); 
+
+    this.rgMicroService.AddRgMicro(this.rgMicroTaxonomie) 
     .subscribe(
       data => {
         this.router.navigate(['/rg/micro'])
@@ -116,20 +96,4 @@ export class RgMicroAddComponent implements OnInit {
     //); 
 
   }
-
-  getInsitutions() {
-    this.institutionService.getAll()
-    .subscribe(
-      institutions => this.institutions = institutions
-    );
-  }
-
-  getInsitution(id: number): void {
-    //const id = this.addRgMarineForm.get('institution').value; 
-    this.institutionService.getDetailInstitution(id).
-    subscribe(
-      newInstitution => this.newInstitution = newInstitution
-    );
-  }
-
 }

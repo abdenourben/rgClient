@@ -7,6 +7,7 @@ import { Taxonomie } from '../_models/taxonomie';
 import { RgAlimentaireService } from '../_services/rg-alimentaire.service';
 import { InstitutionService } from '../_services/institution.service';
 import { Router } from '@angular/router';
+import { RgAlimentaireTaxonomie } from '../_models/RgAlimentaireTaxonomie';
 
 @Component({
   selector: 'app-rg-aliemntaire-add',
@@ -16,10 +17,7 @@ import { Router } from '@angular/router';
 export class RgAliemntaireAddComponent implements OnInit {
 
   newRgAlimentaire: RgAlimentaire; 
-  institutions: Institution[]; 
-  newInstitution: Institution;  
-  rInstitution: Institution;  
-  rgAO: RgAO; 
+  rgAlimentaireTaxonomie: RgAlimentaireTaxonomie; 
   addRgAlimentaireForm: FormGroup;
   taxonomie: Taxonomie; 
 
@@ -43,7 +41,6 @@ export class RgAliemntaireAddComponent implements OnInit {
       environnement: ['', Validators.required], 
       cycleVie: ['', Validators.required], 
       etatRisque: ['', Validators.required], 
-      institution: ['', Validators.required],
       taxonomie: ['', Validators.required],
       espece: ['', Validators.required],
       genre: ['', Validators.required],
@@ -53,7 +50,6 @@ export class RgAliemntaireAddComponent implements OnInit {
       exploitation: ['', Validators.required],
       zone: ['', Validators.required],
     }); 
-    this.getInsitutions(); 
   }
 
   onSubmit() {
@@ -80,33 +76,14 @@ export class RgAliemntaireAddComponent implements OnInit {
       this.addRgAlimentaireForm.get("classe").value,
       ); 
 
-    this.rInstitution = new Institution(
-      this.newInstitution.id,
-      this.newInstitution.nom,
-      this.newInstitution.raisonSociale,
-      this.newInstitution.statutJuridique,
-      this.newInstitution.natureEtabelissement,
-      this.newInstitution.categorie, 
-      this.newInstitution.dateCreation, 
-      this.newInstitution.secteurActivite, 
-      this.newInstitution.siteWeb, 
-      this.newInstitution.email, 
-      this.newInstitution.telFixe, 
-      this.newInstitution.telPortable,
-      this.newInstitution.fax, 
-      this.newInstitution.typeImplicationApa, 
-      this.newInstitution.anneeImplicationApa,
-      this.newInstitution.infoAdditionnelles,
-    );
-
   
 
-    this.rgAO = new RgAO(this.newRgAlimentaire, this.rInstitution, this.taxonomie); 
+    this.rgAlimentaireTaxonomie = new RgAlimentaireTaxonomie(this.newRgAlimentaire, this.taxonomie); 
 
-    this.rgAlimentaireService.AddRgAlimentaire(this.rgAO) 
+    this.rgAlimentaireService.AddRgAlimentaire(this.rgAlimentaireTaxonomie) 
     .subscribe(
       data => {
-        this.router.navigate(['/rg/marine'])
+        this.router.navigate(['/rg/alimentaire'])
       }
     ); 
 
@@ -117,21 +94,6 @@ export class RgAliemntaireAddComponent implements OnInit {
       //}
     //); 
 
-  }
-
-  getInsitutions() {
-    this.institutionService.getAll()
-    .subscribe(
-      institutions => this.institutions = institutions
-    );
-  }
-
-  getInsitution(id: number): void {
-    //const id = this.addRgMarineForm.get('institution').value; 
-    this.institutionService.getDetailInstitution(id).
-    subscribe(
-      newInstitution => this.newInstitution = newInstitution
-    );
   }
 
 }
