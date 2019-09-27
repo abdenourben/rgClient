@@ -51,6 +51,8 @@ import { RgForetAddComponent } from './rg-foret-add/rg-foret-add.component';
 import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
 import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component';
 import { ValidationRessourceComponent } from './validation-ressource/validation-ressource.component';
+import { AdminModule } from './admin/admin.module';
+
 
 
 
@@ -97,15 +99,16 @@ import { ValidationRessourceComponent } from './validation-ressource/validation-
     RgMicroAddComponent,
     RgAnimaleAddComponent,
     ValidationRessourceComponent,
-   
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    AdminModule,
+    AppRoutingModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

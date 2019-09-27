@@ -10,4 +10,5 @@ export class RgForet {
 	environnement: string; 
 	transmission: string; 
 	cycleVie: string;
+	valide: boolean;
 }
