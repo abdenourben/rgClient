@@ -29,12 +29,12 @@ import { RgForetDetailsComponent } from './rg-foret-details/rg-foret-details.com
 import { RgMicroDetailsComponent } from './rg-micro-details/rg-micro-details.component';
 import { RgMarineDetailsComponent } from './rg-marine-details/rg-marine-details.component';
 import { RgAnimaleDetailsComponent } from './rg-animale-details/rg-animale-details.component';
+import { RgMarineAddComponent } from './rg-marine-add/rg-marine-add.component'; 
 import { UsersComponent } from './users/users.component';
-import { RgMarineAddComponent } from './rg-marine-add/rg-marine-add.component';
-import { RgForetAddComponent } from './rg-foret-add/rg-foret-add.component';
-import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
-import { RgAliemntaireAddComponent } from './rg-aliemntaire-add/rg-aliemntaire-add.component';
 import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component';
+import { RgForetAddComponent } from './rg-foret-add/rg-foret-add.component';
+import { RgAliemntaireAddComponent } from './rg-aliemntaire-add/rg-aliemntaire-add.component';
+import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
 const routes: Routes = [
   //{path: '',redirectTo: 'home', pathMatch: 'full'},
   {
@@ -64,13 +64,13 @@ const routes: Routes = [
   {path: 'rg/foret/ajouter', component: RgForetAddComponent},
   {path: 'rg/foret/:id', component: RgForetDetailsComponent},
   {path: 'rg/micro', component: RgMicroComponent }, 
-  {path: 'rg/micro/ajouter',component:RgMicroAddComponent},
+  {path: 'rg/micro/ajouter', component: RgMicroAddComponent }, 
   {path: 'rg/micro/:id', component: RgMicroDetailsComponent},
   {path: 'rg/alimentaire', component: RgAlimentaireComponent },
-  {path: 'rg/alimentaire/ajouter',component:RgAliemntaireAddComponent},
+  {path:'rg/alimentaire/ajouter', component: RgAliemntaireAddComponent },
   {path: 'rg/alimentaire/:id', component: RgAlimentaireDetailsComponent}, 
   {path: 'rg/animale', component: RgAnimaleComponent }, 
-  {path: 'rg/animale/ajouter',component:RgAnimaleAddComponent},
+  {path: 'rg/animale/ajouter',component: RgAnimaleAddComponent},
   {path: 'rg/animale/:id', component: RgAnimaleDetailsComponent},
   {
     path: 'admin',
