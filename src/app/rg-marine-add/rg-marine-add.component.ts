@@ -5,8 +5,9 @@ import { RgMarine } from '../_models/rg_marine';
 import { Router } from '@angular/router';
 import { Institution } from '../_models/institution';
 import { InstitutionService } from '../_services/institution.service';
-import { RgInstitutionObject } from '../_models/RgInstitutionObject';
+import { RgTaxonomieObject } from '../_models/RgTaxonomieObject';
 import { Taxonomie } from '../_models/taxonomie';
+import { RgITO } from '../_models/RgITO';
 
 
 @Component({
@@ -16,13 +17,9 @@ import { Taxonomie } from '../_models/taxonomie';
 })
 export class RgMarineAddComponent implements OnInit {
 
-  newRgMarine: RgMarine;  
-  institutions: Institution[]; 
-  newInstitution: Institution;  
-  rInstitution: Institution;  
-  rgInstitutionObject: RgInstitutionObject;
+  newRgMarine: RgMarine;   
+  rgTaxonomieObject: RgTaxonomieObject;
   addRgMarineForm: FormGroup; 
-  addInstitutionForm: FormGroup;
   taxonomie: Taxonomie; 
 
 
@@ -41,20 +38,18 @@ export class RgMarineAddComponent implements OnInit {
       description: ['', Validators.required],
       morphologie: ['', Validators.required],
       formuleChimique: ['', Validators.required], 
-      structure: ['', Validators.required],
       environnement: ['', Validators.required], 
-      transmission: ['', Validators.required], 
       cycleVie: ['', Validators.required], 
-      marine: ['', Validators.required], 
-      institution: ['', Validators.required],
+      etatRisque: ['', Validators.required], 
+      transmission: ['', Validators.required], 
+      //institution: ['', Validators.required],
+      taxonomie: ['', Validators.required],
       espece: ['', Validators.required],
       genre: ['', Validators.required],
       famille: ['', Validators.required],
       ordre: ['', Validators.required],
       classe: ['', Validators.required],
     }); 
-    this.getInsitutions(); 
-
   }
 
   onSubmit() {
@@ -66,11 +61,10 @@ export class RgMarineAddComponent implements OnInit {
       this.addRgMarineForm.get("description").value,
       this.addRgMarineForm.get("morphologie").value,
       this.addRgMarineForm.get("formuleChimique").value,
-      this.addRgMarineForm.get("structure").value,
       this.addRgMarineForm.get("environnement").value,
-      this.addRgMarineForm.get("transmission").value,
       this.addRgMarineForm.get("cycleVie").value,
-      this.addRgMarineForm.get("marine").value,
+      this.addRgMarineForm.get("etatRisque").value,
+      this.addRgMarineForm.get("transmission").value,
       ); 
     console.log(this.newRgMarine);
 
@@ -83,15 +77,13 @@ export class RgMarineAddComponent implements OnInit {
       ); 
     console.log(this.taxonomie);
 
-    this.rInstitution = new Institution(
+    /*this.rInstitution = new Institution(
       this.newInstitution.id,
       this.newInstitution.nom,
       this.newInstitution.raisonSociale,
       this.newInstitution.statutJuridique,
       this.newInstitution.natureEtabelissement,
-      this.newInstitution.logoChemin, 
       this.newInstitution.categorie, 
-      this.newInstitution.type, 
       this.newInstitution.dateCreation, 
       this.newInstitution.secteurActivite, 
       this.newInstitution.siteWeb, 
@@ -103,38 +95,48 @@ export class RgMarineAddComponent implements OnInit {
       this.newInstitution.anneeImplicationApa,
       this.newInstitution.infoAdditionnelles,
     );
-    //console.log(this.rInstitution); 
+    console.log(this.rInstitution);*/ 
 
   
 
 
 
    
-    this.rgInstitutionObject = new RgInstitutionObject(this.newRgMarine, this.rInstitution); 
-    //console.log(this.rgInstitutionObject); 
-    this.rgMarineService.AddRgMarine(this.rgInstitutionObject) 
+    this.rgTaxonomieObject = new RgTaxonomieObject(this.newRgMarine, this.taxonomie); 
+    //this.rgITO = new RgITO(this.newRgMarine, this.rInstitution, this.taxonomie); 
+    console.log(this.rgTaxonomieObject); 
+
+
+    this.rgMarineService.AddRgMarine(this.rgTaxonomieObject) 
     .subscribe(
       data => {
         this.router.navigate(['/rg/marine'])
       }
     ); 
 
+    //this.rgMarineService.AddRgMarine(this.rgITO) 
+    //.subscribe(
+     // data => {
+       // this.router.navigate(['/rg/marine'])
+      //}
+    //); 
+
   }
 
-  getInsitutions() {
-    this.institutionService.getAll()
-    .subscribe(
-      institutions => this.institutions = institutions
-    );
-  }
+  //getInsitutions() {
+    //this.institutionService.getAll()
+    //.subscribe(
+      //institutions => this.institutions = institutions
+    //);
+  //}
 
-  getInsitution(id: number): void {
+  //getInsitution(id: number): void {
     //const id = this.addRgMarineForm.get('institution').value; 
-    this.institutionService.getDetailInstitution(id).
-    subscribe(
-      newInstitution => this.newInstitution = newInstitution
-    );
-  }
+    //this.institutionService.getDetailInstitution(id).
+    //subscribe(
+      //newInstitution => this.newInstitution = newInstitution
+    //);
+  //}
   
 
 }

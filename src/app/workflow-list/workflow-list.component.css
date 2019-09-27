@@ -1,0 +1,27 @@
+.circle {
+  display: inline-block;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.circle.en-attente {
+    background-color: rgb(226, 131, 42);
+
+}
+.circle.brouillon {
+  background-color: red;
+}
+
+.circle.traitee {
+  background-color: rgb(111, 197, 72);
+}
+
+.mmodal {
+  z-index: 65;
+  top: 0;
+  right: 0;
+  left: 0;
+  min-height: 100%;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.808);
+}

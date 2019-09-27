@@ -11,7 +11,6 @@ import { ProjetsComponent } from './projets/projets.component';
 import { AddprojectComponent } from './addproject/addproject.component';
 import { EventComponent } from './event/event.component';
 import { AddeventComponent } from './addevent/addevent.component';
-
 import { AdminComponent } from '../app/admin/admin.component';
 import { AuthGuard } from '../app/_helpers/auth.guard';
 import { Role } from './_models/role';
@@ -29,13 +28,16 @@ import { RgForetDetailsComponent } from './rg-foret-details/rg-foret-details.com
 import { RgMicroDetailsComponent } from './rg-micro-details/rg-micro-details.component';
 import { RgMarineDetailsComponent } from './rg-marine-details/rg-marine-details.component';
 import { RgAnimaleDetailsComponent } from './rg-animale-details/rg-animale-details.component';
+import { RgMarineAddComponent } from './rg-marine-add/rg-marine-add.component'; 
 import { UsersComponent } from './users/users.component';
-import { RgMarineAddComponent } from './rg-marine-add/rg-marine-add.component';
 import { RgForetAddComponent } from './rg-foret-add/rg-foret-add.component';
-import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
 import { RgAliemntaireAddComponent } from './rg-aliemntaire-add/rg-aliemntaire-add.component';
 import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component';
-import {ValidationRessourceComponent} from './validation-ressource/validation-ressource.component';
+import { ValidationRessourceComponent} from './validation-ressource/validation-ressource.component';
+import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
+import { WorkflowListComponent } from './workflow-list/workflow-list.component';
+import { WorkflowComponent } from './workflow/workflow.component';
+
 const routes: Routes = [
   // {path: '',redirectTo: 'home', pathMatch: 'full'},
   {
@@ -72,6 +74,15 @@ const routes: Routes = [
   {path: 'rg/alimentaire/:id', component: RgAlimentaireDetailsComponent},
   {path: 'rg/animale', component: RgAnimaleComponent },
   {path: 'rg/animale/ajouter', component: RgAnimaleAddComponent},
+  {path: 'rg/micro', component: RgMicroComponent },
+  {path: 'rg/micro/ajouter', component: RgMicroAddComponent },
+  {path: 'rg/micro/:id', component: RgMicroDetailsComponent},
+  {path: 'rg/alimentaire', component: RgAlimentaireComponent },
+  {path: 'rg/alimentaire/ajouter', component: RgAliemntaireAddComponent },
+  {path: 'rg/alimentaire/:id', component: RgAlimentaireDetailsComponent},
+  {path: 'rg/animale', component: RgAnimaleComponent },
+  {path: 'rg/animale/ajouter', component: RgAnimaleAddComponent},
+
   {path: 'rg/animale/:id', component: RgAnimaleDetailsComponent},
   {
     path: 'admin',
@@ -81,6 +92,11 @@ const routes: Routes = [
   },
   {path: 'admin/users', component: UsersComponent},
   { path: '**', redirectTo: '' },
+  {path: 'admin/users', component: UsersComponent},
+  {path: 'workflow', component: WorkflowListComponent },
+  {path: 'workflow/:worflowId', component: WorkflowComponent },
+
+  {path: '**', redirectTo: '' },
 
 ];
 

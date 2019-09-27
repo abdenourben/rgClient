@@ -50,9 +50,12 @@ import { RgMarineAddComponent } from './rg-marine-add/rg-marine-add.component';
 import { RgForetAddComponent } from './rg-foret-add/rg-foret-add.component';
 import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
 import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component';
+
 import { ValidationRessourceComponent } from './validation-ressource/validation-ressource.component';
 import { AdminModule } from './admin/admin.module';
 
+import { WorkflowComponent } from './workflow/workflow.component';
+import { WorkflowListComponent } from './workflow-list/workflow-list.component';
 
 
 
@@ -99,6 +102,8 @@ import { AdminModule } from './admin/admin.module';
     RgMicroAddComponent,
     RgAnimaleAddComponent,
     ValidationRessourceComponent,
+    WorkflowComponent,
+    WorkflowListComponent,
 
   ],
   imports: [

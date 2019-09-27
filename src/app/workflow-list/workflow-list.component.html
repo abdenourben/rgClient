@@ -1,0 +1,72 @@
+<div class="container bg-light h-100">
+  <div
+    *ngIf="adding"
+    class="row h-100 rounded no-gutters justify-content-center align-items-center position-absolute mmodal"
+  >
+    <app-workflow create="true" (finish)="finishAdd()"> </app-workflow>
+  </div>
+  <div class="row bg-primary p-3 align-items-center rounded" style="background-color: #0b8557 !important">
+    <p class="col-auto h5 text-white m-0 p-0 mr-2">Gestion des</p>
+    <p class="col-auto  h4 font-weight-bold text-white m-0 p-0">Demandes de permis</p>
+    <div class="col"></div>
+    <button [disabled]="loading" class="btn btn-light" (click)="onAddClicked()">
+      <i class="fa fa-plus fa-1x  mr-1"></i>Ajouter une demande
+    </button>
+  </div>
+  <div class="row p-0 px-sm-4 bg-white justify-content-center">
+    <app-loading *ngIf="loading" class="mt-4  loading "> </app-loading>
+    <table *ngIf="!loading" class=" table table-striped ">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Date</th>
+          <th scope="col">Pays</th>
+          <th scope="col">Ville</th>
+          <th scope="col">Etat</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let workflow of workflows; let i = index">
+          <th scope="row " class="td-center font-weight-bold ">{{ i }}</th>
+          <td class="td-center font-weight-bold">
+            {{ workflow.demandeur.organisation }}
+          </td>
+          <td class="td-center">{{ workflow.dateDemand }}</td>
+          <td class="td-center">{{ workflow.demandeur.pays }}</td>
+          <td class="td-center">{{ workflow.demandeur.ville }}</td>
+          <td class="td-center">
+            <span
+              [ngClass]="[
+                workflow.status.toLowerCase().replace(' ', '-'),
+                'circle',
+                'rounded-circle',
+                'mx-2'
+              ]"
+            ></span>
+
+            <span
+              [ngClass]="[
+                workflow.status.toLowerCase().replace(' ', '-'),
+                'status'
+              ]"
+            >
+              {{ workflow.status }}
+            </span>
+          </td>
+          <td>
+            <a
+              class="btn btn-primary" style="background-color: #0b8557 !important; border-color:#0b8557 !important"
+              [routerLink]="['/workflow', workflow.id]"
+            >
+              <i class="fa fa-file-alt fa-1x checked  mr-1"></i>
+              Afficher
+            </a>
+          </td>
+        </tr>
+        <tr></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
