@@ -1,29 +1,64 @@
+<div class="tabset">
+    <ngb-tabset>
+        <ngb-tab title="Gestion des utilisateurs">
+            <ng-template ngbTabContent>
 
-<div class="container">
-    <div class="row">
-        <div class="col-4">
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Gestion des ressources">
+            <ng-template ngbTabContent>
 
-            <nav class="navigation">
-                <ul class="mainmenu">
-                    <li><a href="">Gestion des utilisateurs </a>
+                <div class="container-fluid">
+                    <ul class="nav nav-pills nav-fill">
+                        <li class="nav-item dropdown" style="padding-top: 10px">
+                            <a class="dropdown-toggle" data-toggle="dropdown" >Création <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a routerLink="/admin/gestionRg/creationRgF" routerLinkActive="active"> Les Ressources Forestières</a></li>
+                                <li><a routerLink="/admin/gestionRg/creationRgp" routerLinkActive="active"> Les Ressources Alimentaires</a></li>
+                                <li><a routerLink="/admin/gestionRg/creationRgm" routerLinkActive="active"> Les Ressources Marines</a></li>
+                                <li><a routerLink="/admin/gestionRg/creationRgsd" routerLinkActive="active"> Les Ressources Animales</a></li>
+                                <li><a routerLink="/admin/gestionRg/creationRgmo" routerLinkActive="active"> Les Ressources Micro-Organismes</a></li>
 
-                    </li>
-                    <li><a href="">Gestion des ressources </a>
-                        <ul class="submenu">
-                            <li><a href="">Création</a></li>
-                            <li><a href="">Modification</a></li>
-                            <li><a href="">Suppression</a></li>
-                            <li><a routerLink="/gestionRg/ValidationRg" >Validation</a></li>
-                        </ul>
-                    </li>
+                            </ul>
+                        </li>
 
-                </ul>
-            </nav>
-        </div>
-        <div class="col-8" style ="padding-top: 50px;">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/gestionRg/suppressionRg" routerLinkActive="active">Supression</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/gestionRg/modificationRg" routerLinkActive="active">Modification</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/gestionRg/validationRg" routerLinkActive="active">Validation</a>
+                        </li>
+                    </ul>
+                    <router-outlet></router-outlet>
+                </div>
 
-        </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Gestion de l'annuaire">
+            <ng-template ngbTabContent>
+                <div class="container-fluid">
+                    <ul class="nav nav-pills nav-fill">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/annuaire/creation" routerLinkActive="active"> Création</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/annuaire/suppression" routerLinkActive="active">Supression</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/annuaire/modification" routerLinkActive="active">Modification</a>
+                        </li>
+                    </ul>
+                    <router-outlet></router-outlet>
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Gestion des permis">
+            <ng-template ngbTabContent>
 
-
-    </div>
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
 </div>
