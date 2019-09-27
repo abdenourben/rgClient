@@ -50,6 +50,7 @@ import { RgMarineAddComponent } from './rg-marine-add/rg-marine-add.component';
 import { RgForetAddComponent } from './rg-foret-add/rg-foret-add.component';
 import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
 import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component';
+import { ValidationRessourceComponent } from './validation-ressource/validation-ressource.component';
 
 
 
@@ -95,6 +96,7 @@ import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component
     RgForetAddComponent,
     RgMicroAddComponent,
     RgAnimaleAddComponent,
+    ValidationRessourceComponent,
    
   ],
   imports: [
