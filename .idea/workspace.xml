@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2283272-83b5-4cf9-ab8e-3154c55b7c7a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/about/about.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/about/about.component.html" afterDir="false" />
-    </list>
+    <list default="true" id="a2283272-83b5-4cf9-ab8e-3154c55b7c7a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,17 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/about/about.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4250">
-              <caret line="250" selection-start-line="250" selection-end-line="250" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -51,7 +39,6 @@
         <option value="$PROJECT_DIR$/src/app/footer/footer.component.scss" />
         <option value="$PROJECT_DIR$/src/app/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/src/app/permis/permis.component.scss" />
-        <option value="$PROJECT_DIR$/src/app/permis/permis.component.html" />
         <option value="$PROJECT_DIR$/src/app/validation-ressource/validation-ressource.component.scss" />
         <option value="$PROJECT_DIR$/src/app/sidebar-admin/sidebar-admin.component.scss" />
         <option value="$PROJECT_DIR$/src/app/sidebar-admin/sidebar-admin.component.html" />
@@ -85,6 +72,7 @@
         <option value="$PROJECT_DIR$/src/app/_models/institution.ts" />
         <option value="$PROJECT_DIR$/src/app/users/users.component.html" />
         <option value="$PROJECT_DIR$/src/app/about/about.component.html" />
+        <option value="$PROJECT_DIR$/src/app/permis/permis.component.html" />
       </list>
     </option>
   </component>
@@ -123,14 +111,7 @@
               <item name="rgClient" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="about" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rgClient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rgClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="permis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rgClient" type="b2602c69:ProjectViewProjectNode" />
@@ -268,10 +249,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57897000" />
+    <option name="totallyTimeSpent" value="58172000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21428572" />
@@ -327,9 +308,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'develop' into nada_test_branch&#10;&#10;# Conflicts:&#10;#&#9;package-lock.json&#10;#&#9;src/app/_models/rg_foret.ts&#10;#&#9;src/app/app-routing.module.ts&#10;#&#9;src/app/app.module.ts" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/styles.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -707,6 +685,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/permis/permis.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
     </entry>
