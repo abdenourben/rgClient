@@ -1,29 +1,19 @@
-<button type="submit" class="btn-lg btn-success button-aj" routerLink="/rg/micro/ajouter">Ajouter</button>
+<div class="container bg-light h-100" style="margin-bottom: 2em;" >
+    <div class="row bg-primary p-3 align-items-center rounded" style="background-color: #0b8557 !important">
+      <p class="col-auto h5 text-white m-0 p-0 mr-2">Gestion des</p>
+      <p class="col-auto  h4 font-weight-bold text-white m-0 p-0">Ressources génétiques micro-organismes</p>
+      <div class="col"></div>
+      <button [disabled]="loading" class="btn btn-light" routerLink="/rg/micro/ajouter" (click)="onAddClicked()">
+        <i class="fa fa-plus fa-1x  mr-1"></i>Ajouter une ressource
+      </button>
+    </div>
+  </div>
 
-<nav class="navigation">
-    <ul class="mainmenu">
-        <li><a href="">Taxonomie</a>
-        <ul class="submenu">
-            <li><a href="">Espèce</a></li>
-            <li><a href="">Gènes</a></li>
-        </ul>
-        </li>
-        <li><a href="">Distribution</a>
-        <ul class="submenu">
-            <li><a href="">Région</a></li>
-            <li><a href="">Wilaya</a></li>
-        </ul>
-        </li>
-        <li><a href="">Éditeurs</a></li>
-        <li><a href="">Contribuer</a></li>
-    </ul>
-</nav>
-<h2 class="title">LES RESSOURCES MICRO-ORGANISMES</h2>
 <div class="container" >  
     <div class="row">
         <div class="col-lg-3 container-card" *ngFor="let rgMicro of rgMicros">
         <div class="card">
-            <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" class="card-img-top" alt="...">
+            <img style="height: 150px; width: 150px; margin: auto;" src="../../assets/img/no_image.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h6 class="card-title ">{{rgMicro.nomCommunFr}}</h6>
                 <p class="card-text">
