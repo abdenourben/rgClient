@@ -1,3 +1,60 @@
-<div>
-    <p> Validation des RG</p>
+<div class="container bg-light h-100">
+
+    <div class="row bg-primary p-3 align-items-center rounded" style="background-color: #0b8557 !important">
+        <p class="col-auto h5 text-white m-0 p-0 mr-2">Validation des</p>
+        <p class="col-auto  h4 font-weight-bold text-white m-0 p-0">Ressources Génétiques</p>
+        <div class="col"></div>
+    </div>
+    <div class="row p-0 px-sm-4 bg-white justify-content-center">
+        <app-loading *ngIf="loading" class="mt-4  loading "> </app-loading>
+        <table *ngIf="!loading" class=" table table-striped ">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom Commun (Fr)</th>
+                <th scope="col">Nom Commun (Ar)</th>
+                <th scope="col">Nom Scientifique</th>
+                <th scope="col">Etat</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rg of rgNonValides; let i = index">
+                <th scope="row " class="td-center font-weight-bold ">{{ i }}</th>
+                <td class="td-center font-weight-bold">
+                    {{ rg.nomCommunFr }}
+                </td>
+                <td class="td-center">{{ rg.nomCommunAr }}</td>
+                <td class="td-center">{{ rg.nomScientifique }}</td>
+                <td class="td-center">{{ rg.valide }}</td>
+                <td class="td-center">
+            <span
+                    [ngClass]="[
+                workflow.status.toLowerCase().replace(' ', '-'),
+                'circle',
+                'rounded-circle',
+                'mx-2'
+              ]"
+            ></span>
+
+                    <span
+                            [ngClass]="[workflow.status.toLowerCase().replace(' ', '-'),'status']"
+                    >
+              {{ rg.valide}}
+            </span>
+                </td>
+                <td>
+                    <a
+                            class="btn btn-primary" style="background-color: #0b8557 !important; border-color:#0b8557 !important"
+                            [routerLink]="['/rg',rg.id]"
+                    >
+                        <i class="fa fa-file-alt fa-1x checked  mr-1"></i>
+                        Afficher
+                    </a>
+                </td>
+            </tr>
+            <tr></tr>
+            </tbody>
+        </table>
+    </div>
 </div>

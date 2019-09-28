@@ -1,8 +1,8 @@
-<div class="tabset">
+<div class="tabset  nav-fill"  >
     <ngb-tabset>
         <ngb-tab title="Gestion des utilisateurs">
             <ng-template ngbTabContent>
-
+                <app-users></app-users>
             </ng-template>
         </ngb-tab>
         <ngb-tab title="Gestion des ressources">
@@ -11,22 +11,19 @@
                 <div class="container-fluid">
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item dropdown" style="padding-top: 10px">
-                            <a class="dropdown-toggle" data-toggle="dropdown" >Création <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" >Création <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a routerLink="/admin/gestionRg/creationRgF" routerLinkActive="active"> Les Ressources Forestières</a></li>
-                                <li><a routerLink="/admin/gestionRg/creationRgp" routerLinkActive="active"> Les Ressources Alimentaires</a></li>
-                                <li><a routerLink="/admin/gestionRg/creationRgm" routerLinkActive="active"> Les Ressources Marines</a></li>
-                                <li><a routerLink="/admin/gestionRg/creationRgsd" routerLinkActive="active"> Les Ressources Animales</a></li>
-                                <li><a routerLink="/admin/gestionRg/creationRgmo" routerLinkActive="active"> Les Ressources Micro-Organismes</a></li>
+                                <li><a routerLink="/admin/gestionRg/creationRgF" > Les Ressources Forestières</a></li>
+                                <li><a routerLink="/admin/gestionRg/creationRgp" > Les Ressources Alimentaires</a></li>
+                                <li><a routerLink="/admin/gestionRg/creationRgm" > Les Ressources Marines</a></li>
+                                <li><a routerLink="/admin/gestionRg/creationRgsd"> Les Ressources Animales</a></li>
+                                <li><a routerLink="/admin/gestionRg/creationRgmo"> Les Ressources Micro-Organismes</a></li>
 
                             </ul>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" routerLink="/admin/gestionRg/suppressionRg" routerLinkActive="active">Supression</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" routerLink="/admin/gestionRg/modificationRg" routerLinkActive="active">Modification</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" routerLink="/admin/gestionRg/validationRg" routerLinkActive="active">Validation</a>
@@ -55,7 +52,27 @@
                 </div>
             </ng-template>
         </ngb-tab>
-        <ngb-tab title="Gestion des permis">
+        <ngb-tab title="Gestion permis" >
+            <ng-template ngbTabContent>
+            <app-workflow-list></app-workflow-list>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Gestion des activités">
+            <ng-template ngbTabContent>
+                <div class="container-fluid">
+                    <ul class="nav nav-pills nav-fill">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/event/creation" routerLinkActive="active"> Ajouter Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/projet/creation" routerLinkActive="active">Ajouter Projet</a>
+                        </li>
+                    </ul>
+                    <router-outlet></router-outlet>
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Gestion reglementation">
             <ng-template ngbTabContent>
 
             </ng-template>

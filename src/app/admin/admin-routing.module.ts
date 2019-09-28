@@ -11,6 +11,10 @@ import {RgAliemntaireAddComponent} from '../rg-aliemntaire-add/rg-aliemntaire-ad
 import {RgMarineAddComponent} from '../rg-marine-add/rg-marine-add.component';
 import {RgAnimaleAddComponent} from '../rg-animale-add/rg-animale-add.component';
 import {RgForetAddComponent} from '../rg-foret-add/rg-foret-add.component';
+import {WorkflowComponent} from '../workflow/workflow.component';
+import {AddeventComponent} from '../addevent/addevent.component';
+import {AddprojectComponent} from '../addproject/addproject.component';
+
 
 const routes: Routes = [
 
@@ -23,12 +27,13 @@ const routes: Routes = [
       {path: 'gestionRg/creationRgp', component: RgAliemntaireAddComponent},
       {path: 'gestionRg/creationRgm', component: RgMarineAddComponent},
       {path: 'gestionRg/creationRgmo', component: RgMicroAddComponent},
-      {path: 'gestionRg/modificationRg', component: ValidationRessourceComponent},
-      {path: 'gestionRg/suppressionRg', component: ValidationRessourceComponent},
-      {path: 'gestionRg/validationRg', component:  ValidationRessourceComponent},
+      // {path: 'gestionRg/suppressionRg', component: ValidationRessourceComponent},
+   //   {path: 'gestionRg/validationRg', component:  ValidationRessourceComponent},
       {path: 'annuaire/creation', component: InstitutionAddComponent},
       {path: 'annuaire/suppression', component: InstitutionComponent},
       {path: 'annuaire/modification', component: InstitutionEditComponent},
+      {path: 'event/creation', component: AddeventComponent},
+      {path: 'projet/creation', component: AddprojectComponent},
     ]
   }
   ];

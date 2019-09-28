@@ -8,5 +8,6 @@ export class Rg {
 	formuleChimique: string; 
 	environnement: string; 
 	cycleVie: string; 
-	etatRisque: string; 
+	etatRisque: string;
+	valide: boolean;
 }

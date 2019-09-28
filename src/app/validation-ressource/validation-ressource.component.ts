@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {RgForet} from '../_models/rg_foret';
-import {RgForetService} from '../_services/rg-foret.service';
+import {Rg} from '../_models/rg';
+import {RgService} from '../_services/rg.service';
+
 
 @Component({
   selector: 'app-validation-ressource',
@@ -9,21 +10,16 @@ import {RgForetService} from '../_services/rg-foret.service';
 })
 export class ValidationRessourceComponent implements OnInit {
 
-  rgForets : RgForet[];
+  rgNonValides: Rg[];
+  loading = true;
 
-  constructor(
-      private rgForetService: RgForetService
-  ) { }
+  constructor(public rgService: RgService) { }
 
   ngOnInit() {
-    this.getRgForets();
+    this.rgService.getAll().subscribe(rg => {
+      this.rgNonValides = rg;
+      this.loading = false;
+    });
   }
-
-  getRgForets(): void {
-    this.rgForetService.getAll().subscribe(
-        rgForets => this.rgForets = rgForets
-    );
-  }
-
 
 }
