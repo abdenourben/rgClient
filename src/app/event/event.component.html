@@ -1,10 +1,21 @@
+<div class="container bg-light h-100" style="margin-bottom: 2em;" >
+    <div class="row bg-primary p-3 align-items-center rounded" style="background-color: #0b8557 !important">
+      <p class="col-auto h5 text-white m-0 p-0 mr-2">Liste des</p>
+      <p class="col-auto  h4 font-weight-bold text-white m-0 p-0">Évènements de l'année en cours</p>
+      <div class="col"></div>
+      <button [disabled]="loading" class="btn btn-light" routerLink="/institution/add" (click)="onAddClicked()">
+        <i class="fa fa-plus fa-1x  mr-1"></i>Ajouter un évènement
+      </button>
+    </div>
+  </div>
 
-<div class="row">
+  <div class="container"  style="margin: 10%; margin-top: -5%">
+    <div class="row">
         <div class="dates col-lg-2" style="margin-top: 7%;margin-left: 2%">
                 <!-- menu -->
                 <div id="MainMenu">
                 <div class="list-group panel">
-                    <a routerLink="#" class="list-group-item list-group-item-success" data-parent="#MainMenu">Projet par année</a>
+                    <a routerLink="#" class="list-group-item list-group-item-success" data-parent="#MainMenu">Évènement par année</a>
                     <a routerLink="#" class="list-group-item" data-parent="#MainMenu">2019</a>
                     <a routerLink="#" class="list-group-item" data-parent="#MainMenu">2018</a>
                     <a routerLink="#" class="list-group-item" data-parent="#MainMenu">2017</a>
@@ -20,8 +31,8 @@
         <div class="my-5 col-lg-8">
     
                 <!-- Section heading -->
-                <h2 class="h1-responsive font-weight-bold my-5">Les projets de 2019</h2>
-            
+                <br>
+                <br>            
                 
                 <div class="row">
             
@@ -50,7 +61,7 @@
                     <!-- Post data -->
                     <p>par <a class="font-weight-bold">Dr Ismail Bennacer</a>, 19/04/2018</p>
                     <!-- Read more button -->
-                    <a class="btn btn-primary btn-md">Lire plus</a>
+                    <button type="button" class="btn btn-primary btn-md">Lire plus</button>
             
                 </div>
                 <!-- Grid column -->
@@ -86,7 +97,7 @@
                         <!-- Post data -->
                         <p>par <a class="font-weight-bold">Dr Ismail Bennacer</a>, 19/04/2018</p>
                         <!-- Read more button -->
-                        <a class="btn btn-primary btn-md">Lire plus</a>
+                        <button type="button" class="btn btn-primary btn-md">Lire plus</button>
                 
                     </div>
                     <!-- Grid column -->
@@ -122,7 +133,7 @@
                         <!-- Post data -->
                         <p>par <a class="font-weight-bold">Dr Ismail Bennacer</a>, 19/04/2018</p>
                         <!-- Read more button -->
-                        <a class="btn btn-primary btn-md">Lire plus</a>
+                        <button type="button" class="btn btn-primary btn-md">Lire plus</button>
                 
                     </div>
                     <!-- Grid column -->
@@ -132,6 +143,8 @@
             
         </div>
 </div>
+  </div>
+
 
 
 
