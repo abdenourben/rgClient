@@ -1,70 +1,61 @@
 export class Institution {
-    id: number; 
-    nom: string; 
-    raisonSociale: string; 
-    statutJuridique: string; 
-    natureEtabelissement: string; 
-    logoChemin: string; 
-    categorie: string; 
-    type: string; 
-	dateCreation: Date;
-	secteurActivite: string;
-	siteWeb: string;
+	id: number;
+	nom: string;
+	raison: string;
+	statut: string;
+	logo: string;
+	categorie: string;
+	type: string;
+	creation: Date;
+	secteur: string;
+	site: string;
 	email: string;
-	telFixe: string;
-	telPortable: string;
+	telephone: string;
 	fax: string;
-	typeImplicationApa: string;
-	anneeImplicationApa: string;
-	infoAdditionnelles: string;
-
-
-	public constructor
-	(
-		id: number, 
+	typeApa: string;
+	anneeApa: string;
+	infoAdd: string;
+	adresse: string;
+	public constructor(
+		id: number,
 		nom: string,
-		raisonSociale: string, 
-		statutJuridique: string,
-		natureEtabelissement: string,
-		logoChemin: string,
+		raison: string,
+		statut: string,
 		categorie: string,
 		type: string,
-		dateCreation: Date,
-		secteurActivite: string,
-		siteWeb: string,
+		creation: Date,
+		secteur: string,
+		site: string,
 		email: string,
-		telFixe: string,
-		telPortable: string,
+		telephone: string,
 		fax: string,
-		typeImplicationApa: string,
-		anneeImplicationApa: string,
-		infoAdditionnelles: string,
-	
+		typeApa: string,
+		anneeApa: string,
+		infoAdd: string,
+		adresse: string,
 
-		) {
-			this.id = id; 
-			this.nom = nom; 
-			this.raisonSociale = raisonSociale; 
-			this.statutJuridique = statutJuridique; 
-			this.natureEtabelissement = natureEtabelissement; 
-			this.logoChemin = logoChemin; 
-			this.categorie = categorie; 
-			this.type = type; 
-			this.dateCreation = dateCreation; 
-			this.secteurActivite = secteurActivite; 
-			this.siteWeb = siteWeb; 
-			this.email = email; 
-			this.telFixe = telFixe; 
-			this.telPortable = telPortable; 
-			this.fax = fax; 
-			this.typeImplicationApa = typeImplicationApa; 
-			this.anneeImplicationApa = anneeImplicationApa; 
-			this.infoAdditionnelles = infoAdditionnelles; 
-		 }
+	) {
+		this.id = id;
+		this.nom = nom;
+		this.raison = raison;
+		this.statut = statut;
+		this.categorie = categorie;
+		this.type = type;
+		this.creation = creation;
+		this.secteur = secteur;
+		this.site = site;
+		this.email = email;
+		this.telephone = telephone;
+		this.fax = fax;
+		this.typeApa = typeApa;
+		this.anneeApa = anneeApa;
+		this.infoAdd = infoAdd;
+		this.adresse = adresse;
+	}
 
 	//public constructor(init?: Partial<Institution >) {
-		//Object.assign(this, init);
+	//Object.assign(this, init);
 
-    //}
-  
+	//}
+
 }

@@ -1,215 +1,106 @@
-<!--
-<div class="container">
-	<div>
-	  <h1>Formulaire de modification d'une institution</h1>
-	  <form [formGroup]="modifyForm" (ngSubmit)="onSubmit()">
-		<div class="form-group">
-		  <label for="nom">Nom</label>
-		  <input type="text" class="form-control" id="nom"
-				 required
-				 [(ngModel)]="institution.nom" name="nom"
-               	 formControlName="nom"
-				 >
-				
-		 
-		</div>
 
-		<div class="form-group">
-			<label for="raisonSociale">Raison sociale</label>
-			<input type="text" class="form-control" id="raisonSociale"
-			required
-			>
-		  </div>
-		  <div class="form-group">
-			<label for="statutJuridique">Statut juridique</label>
-			<input type="text" class="form-control" id="statutJuridique"
-			required
-			>
-		  </div>
-  
-		<div class="form-group">
-		  <label for="natureEtabelissement">Nature de l'établissement</label>
-		  <input type="text" class="form-control" id="natureEtabelissement"
-		  required
-		  >
-		</div>
-		<div class="form-group">
-			<label for="dateCreation">Date de création</label>
-			<input type="date" class="form-control" id="dateCreation"
-			required
-			>
-		</div>
-		<div class="form-group">
-			<label for="categorie">Catégorie</label>
-			<input type="text" class="form-control" id="categorie"
-			required
-			>
-		</div>
-		<div class="form-group">
-			<label for="type">Type</label>
-			<input type="text" class="form-control" id="type"
-			required
-			>
-		</div>
-		<div class="form-group">
-			<label for="secteurActivite">Secteur d'activité</label>
-			<input type="text" class="form-control" id="secteurActivite"
-			required
-			>
-		</div>
-		<div class="form-group">
-			<label for="siteWeb">Site web</label>
-			<input type="text" class="form-control" id="siteWeb"
-			required
-			>
-		</div>
-		<div class="form-group">
-			<label for="email">Email</label>
-			<input type="email" class="form-control" id="email"
-			required
-			>
-		</div>
-		<div class="form-group">
-			<label for="telFixe">Téléphone fixe</label>
-			<input type="text" class="form-control" id="telFixe"
-			required
-			>
-		</div>
-		<div class="form-group">
-			<label for="telPortable">Téléphone portable</label>
-			<input type="text" class="form-control" id="telPortable"
-			required
-			>
-		</div>
-
-		<div class="form-group">
-			<label for="fax">Fax</label>
-			<input type="text" class="form-control" id="fax"
-			required
-			>
-		</div>
-		<div class="form-group">
-			<label for="typeImplicationApa">Type d'implication APA</label>
-			<input type="text" class="form-control" id="typeImplicationApa"
-			required
-			>
-		</div>
-		<div class="form-group">
-			<label for="anneeImplicationApa">Année d'implication APA</label>
-			<input type="text" class="form-control" id="anneeImplicationApa"
-			required
-			>
-		</div>
-		<div class="form-group">
-			<label for="infoAdditionnelles">Informations additionnelles</label>
-			<input type="text" class="form-control" id="infoAdditionnelles"
-			required
-			>
-		</div> 
-
-
-  
-  
-	
-  
-		<button type="submit" class="btn btn-success">Submit</button>
-	  </form>
-	</div> 
-  
-	<div [hidden]="!submitted">
-	  <h2>You submitted the following:</h2>
-	  <div class="row">
-		<div class="col-xs-3">Name</div>
-		<div class="col-xs-9">{{ institution.nom }}</div>
-	  </div>
-	  <div class="row">
-		<div class="col-xs-3">Raison sociale</div>
-		<div class="col-xs-9">{{ institution.raisonSociale }}</div>
-	  </div>
-	
-	  <br>
-	  <button class="btn btn-primary" (click)="submitted=false">Edit</button>
-	</div>
-  </div> -->
-
-
-<form [formGroup]="modifyForm" style="margin: 5%">
+<form [formGroup]="modifyForm" style=" margin: 5%">
 	<div class="form-row">
 		<div class="form-group col-md-12">
-			<label for="inputAddress ">Nom de l'insitution</label>
-			<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+			<label for="nom">Nom de l'insitution</label>
+			<input type="text" formControlName="nom" class="form-control" id="nom" [(ngModel)]="institution.nom">
 		</div>
 		<div class="form-group col-md-6">
-			<label for="inputAddress">Raison sociale</label>
-			<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+			<label for="raison">Raison sociale</label>
+			<input type="text" formControlName="raison" class="form-control" id="raison"[(ngModel)]="institution.raison">
 		</div>
 		<div class="form-group col-md-6">
-			<label for="inputAddress">Statut juridique</label>
-			<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-		</div>
-		<div class="form-group col-md-6">
-			<label for="inputState">Nature de l'établissement</label>
-			<select id="inputEtat" class="form-control">
-				<option selected>Nature 1</option>
-				<option>Nature 2</option>
-				<option>Nature 3</option>
+			<label for="type">Type de l'institution</label>
+			<select id="type" formControlName="type" class="form-control" [(ngModel)]="institution.type">
+				<option selected>Publique</option>
+				<option>Privée</option>
+				<option>Mixte</option>
 			</select>
 		</div>
 		<div class="form-group col-md-6">
-			<label for="inputAddress">Date de création</label>
-			<input type="date" class="form-control" id="inputAddress" placeholder="1234 Main St">
+			<label for="creation">Date de création</label>
+			<input type="date" formControlName="creation" class="form-control" id="creation" [(ngModel)]="institution.creation">
 		</div>
 		<div class="form-group col-md-6">
-			<label for="inputState">Catégorie</label>
-			<select id="inputEtat" class="form-control">
-				<option selected>Catégorie 1</option>
-				<option>Catégorie 2</option>
-				<option>Catégorie 3</option>
+			<label for="categorie">Catégorie</label>
+			<select id="categorie" formControlName="categorie" class="form-control" [(ngModel)]="institution.categorie">
+				<option selected>Entreprise</option>
+				<option>Université</option>
+				<option>Laboratoire</option>
 			</select>
 		</div>
 		<div class="form-group col-md-6">
-			<label for="inputState">Type</label>
-			<select id="inputEtat" class="form-control">
-				<option selected>Type 1</option>
-				<option>Type 2</option>
-				<option>Type 3</option>
+			<label for="statut">Statut juridique</label>
+			<select id="statut" formControlName="statut" class="form-control" [(ngModel)]="institution.statut">
+				<option selected>SARL</option>
+				<option>SPA</option>
+				<option>SNC</option>
+				<option>GP</option>
+				<option>EURL</option>
+				<option>SCA</option>
+				<option>SCS</option>
+				<option>Groupement</option>
+				<option>Entreprise individuelle</option>
 			</select>
+		</div >
+		<div class="form-group col-md-6">
+			<label for="secteur">Secteur d'activité</label>
+			<select id="secteur" formControlName="secteur" class="form-control" [(ngModel)]="institution.secteur">
+				<option selected>Enseignement</option>
+				<option>Taxonomie</option>
+				<option>Conservation</option>
+				<option>Production</option>
+				<option>Agroalimentaire</option>
+				<option>Banque de gène</option>
+				<option>Chimie</option>
+				<option>Parachimie</option>
+				<option>Commerce</option>
+				<option>Distribution</option>
+				<option>Industrie pharmaceutique</option>
+				<option>Études et conseils</option>
+				<option>Services aux entreprises</option>
+				<option>Transports et logistique</option>
+			</select>
+		</div>
+
+		<div class="form-group col-md-6">
+			<label for="email">Email</label>
+			<input type="email" formControlName="email" class="form-control" id="email" [(ngModel)]="institution.email">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="site">Site web</label>
+			<input type="text" formControlName="site" class="form-control" id="site" [(ngModel)]="institution.site">
+		</div>
+		<div class="form-group col-md-4">
+			<label for="tel">Téléphone</label>
+			<input type="text" formControlName="tel" class="form-control" id="tel" [(ngModel)]="institution.telephone">
+		</div>
+		<div class="form-group col-md-4">
+			<label for="fax">Fax</label>
+			<input type="text" formControlName="fax" class="form-control" id="fax" [(ngModel)]="institution.fax">
+		</div>
+		<div class="form-group col-md-4">
+			<label for="adresse">Localisation</label>
+			<input type="text" formControlName="adresse" class="form-control" id="adresse" [(ngModel)]="institution.adresse">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="typeApa">Type d'implication APA</label>
+			<select id="typeApa" formControlName="typeApa" class="form-control" [(ngModel)]="institution.typeApa">
+				<option selected>Fournisseur</option>
+				<option>Utilisateur</option>
+				<option>Point FocaL NationaL (PFN)</option>
+				<option>Autorité nationale compétente (ANC)</option>
+			</select>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="anneeApa">Date d'implication dans l'APA</label>
+			<input type="date" formControlName="anneeApa" class="form-control" id="anneeApa" [(ngModel)]="institution.anneeApa">
 		</div>
 		<div class="form-group col-md-12">
-			<label for="inputPassword4">Secteur d'activité</label>
-			<input type="text" class="form-control" id="inputPassword4" placeholder="Password">
+			<label for="infoAdd">Informations additionnelles</label>
+			<input type="text" formControlName="infoAdd" class="form-control" id="infoAdd" [(ngModel)]="institution.infoAdd">
 		</div>
-		<div class="form-group col-md-6">
-			<label for="inputEmail4">Email</label>
-			<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-		</div>
-		<div class="form-group col-md-6">
-			<label for="inputEmail4">Site web</label>
-			<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-		</div>
-		<div class="form-group col-md-4">
-			<label for="inputEmail4">Téléphone fix</label>
-			<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-		</div>
-		<div class="form-group col-md-4">
-			<label for="inputEmail4">Téléphone portable</label>
-			<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-		</div>
-		<div class="form-group col-md-4">
-			<label for="inputEmail4">Fax</label>
-			<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-		</div>
-		<div class="form-group col-md-6">
-			<label for="inputState">Type d'implication APA</label>
-			<select id="inputEtat" class="form-control">
-				<option selected>Recherche</option>
-				<option>Éducation</option>
-			</select>
-		</div>
-		<div class="form-group col-md-6">
-			<label for="inputAddress">Date de création</label>
-			<input type="date" class="form-control" id="inputAddress" placeholder="1234 Main St">
-		</div>
-	</div>	 
-	<button type="submit" class="btn btn-primary" (ngSubmit)="onSubmit()">Sign in</button>
+	</div>
+	<!--button class="btn btn-success" (click)="update()"> Modifier </button -->
+	<button type="submit" class="btn btn-success" (click)="update()">Modifier</button>
 </form>
