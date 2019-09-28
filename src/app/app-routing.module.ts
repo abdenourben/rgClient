@@ -24,7 +24,19 @@ import { RgAnimaleComponent } from './rg-animale/rg-animale.component';
 import { RgForetComponent } from './rg-foret/rg-foret.component'; 
 import { InstitutionEditComponent } from './institution-edit/institution-edit.component'; 
 import { InstitutionAddComponent } from './institution-add/institution-add.component'; 
-import { InstitutionAjouterComponent } from './institution-ajouter/institution-ajouter.component';
+import { RgAlimentaireDetailsComponent } from './rg-alimentaire-details/rg-alimentaire-details.component';
+import { RgForetDetailsComponent } from './rg-foret-details/rg-foret-details.component';
+import { RgMicroDetailsComponent } from './rg-micro-details/rg-micro-details.component';
+import { RgMarineDetailsComponent } from './rg-marine-details/rg-marine-details.component';
+import { RgAnimaleDetailsComponent } from './rg-animale-details/rg-animale-details.component';
+import { RgMarineAddComponent } from './rg-marine-add/rg-marine-add.component'; 
+import { UsersComponent } from './users/users.component';
+import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component';
+import { RgForetAddComponent } from './rg-foret-add/rg-foret-add.component';
+import { RgAliemntaireAddComponent } from './rg-aliemntaire-add/rg-aliemntaire-add.component';
+import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
+import { WorkflowListComponent } from './workflow-list/workflow-list.component';
+import { WorkflowComponent } from './workflow/workflow.component';
 const routes: Routes = [
   //{path: '',redirectTo: 'home', pathMatch: 'full'},
   {
@@ -44,22 +56,35 @@ const routes: Routes = [
   {path: 'evenements', component: EventComponent},
   {path: 'evenements/ajouterevenements', component: AddeventComponent},
   {path: 'institution', component: InstitutionComponent},
-  { path: 'institution/ajouter', component: InstitutionAddComponent }, 
-  { path: 'institution/:id', component: InstitutionDetailComponent}, 
-  { path: 'institution/edit/:id', component: InstitutionEditComponent },
-  { path: 'rg/marine', component: RgMarineComponent }, 
-  { path: 'rg/foret', component: RgForetComponent }, 
-  { path: 'rg/micro', component: RgMicroComponent }, 
-  { path: 'rg/alimentaire', component: RgAlimentaireComponent }, 
-  { path: 'rg/animale', component: RgAnimaleComponent }, 
+  {path: 'institution/add', component: InstitutionAddComponent }, 
+  {path: 'institution/:id', component: InstitutionDetailComponent}, 
+  {path: 'institution/edit/:id', component: InstitutionEditComponent },
+  {path: 'rg/marine', component: RgMarineComponent }, 
+  {path: 'rg/marine/ajouter', component:RgMarineAddComponent},
+  {path: 'rg/marine/:id', component:RgMarineDetailsComponent},
+  {path: 'rg/foret', component: RgForetComponent }, 
+  {path: 'rg/foret/ajouter', component: RgForetAddComponent},
+  {path: 'rg/foret/:id', component: RgForetDetailsComponent},
+  {path: 'rg/micro', component: RgMicroComponent }, 
+  {path: 'rg/micro/ajouter', component: RgMicroAddComponent }, 
+  {path: 'rg/micro/:id', component: RgMicroDetailsComponent},
+  {path: 'rg/alimentaire', component: RgAlimentaireComponent },
+  {path:'rg/alimentaire/ajouter', component: RgAliemntaireAddComponent },
+  {path: 'rg/alimentaire/:id', component: RgAlimentaireDetailsComponent}, 
+  {path: 'rg/animale', component: RgAnimaleComponent }, 
+  {path: 'rg/animale/ajouter',component: RgAnimaleAddComponent},
+  {path: 'rg/animale/:id', component: RgAnimaleDetailsComponent},
   {
     path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuard],
     data: { roles: [Role.Admin] }
   },
+  {path: 'admin/users',component:UsersComponent},
+  {path: 'workflow', component: WorkflowListComponent },
+  {path: 'workflow/:worflowId', component: WorkflowComponent },
 
-  { path: '**', redirectTo: '' },
+  {path: '**', redirectTo: '' },
 
 ];
 

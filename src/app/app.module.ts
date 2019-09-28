@@ -19,7 +19,7 @@ import { EventComponent } from './event/event.component';
 import { AddeventComponent } from './addevent/addevent.component';
 import { AdminComponent } from './admin/admin.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from '../app/_helpers/error.interceptor';
 import { JwtInterceptor } from '../app/_helpers/jwt.interceptor';
@@ -31,13 +31,28 @@ import { RgAlimentaireComponent } from './rg-alimentaire/rg-alimentaire.componen
 import { RgForetComponent } from './rg-foret/rg-foret.component';
 import { RgAnimaleComponent } from './rg-animale/rg-animale.component';
 import { RgMicroComponent } from './rg-micro/rg-micro.component';
-import { InstitutiondetailcontactComponent } from './institutiondetailcontact/institutiondetailcontact.component';
-import { InstitutiondetailprofileComponent } from './institutiondetailprofile/institutiondetailprofile.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { InstitutionEditComponent } from './institution-edit/institution-edit.component';
 import { InstitutionAddComponent } from './institution-add/institution-add.component';
-import { InstitutionAjouterComponent } from './institution-ajouter/institution-ajouter.component';
+import { RgAlimentaireDetailsComponent } from './rg-alimentaire-details/rg-alimentaire-details.component';
+import { RgAnimaleDetailsComponent } from './rg-animale-details/rg-animale-details.component';
+import { RgForetDetailsComponent } from './rg-foret-details/rg-foret-details.component';
+import { RgMarineDetailsComponent } from './rg-marine-details/rg-marine-details.component';
+import { RgMicroDetailsComponent } from './rg-micro-details/rg-micro-details.component';
+
+import { AddUserComponent } from './users/add-user/add-user.component'
+import { DeleteUserComponent } from './users/delete-user/delete-user.component'
+import { UsersComponent } from './users/users.component';
+import { LoadingComponent } from './loading/loading.component';
+import { RgAliemntaireAddComponent } from './rg-aliemntaire-add/rg-aliemntaire-add.component';
+import { RgMarineAddComponent } from './rg-marine-add/rg-marine-add.component';
+import { RgForetAddComponent } from './rg-foret-add/rg-foret-add.component';
+import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
+import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component';
+import { WorkflowComponent } from './workflow/workflow.component';
+import { WorkflowListComponent } from './workflow-list/workflow-list.component';
+
 
 
 @NgModule({
@@ -66,15 +81,30 @@ import { InstitutionAjouterComponent } from './institution-ajouter/institution-a
     RgForetComponent,
     RgAnimaleComponent,
     RgMicroComponent,
-    InstitutiondetailcontactComponent,
-    InstitutiondetailprofileComponent,
     InstitutionEditComponent,
     InstitutionAddComponent,
-    InstitutionAjouterComponent,
+    RgAlimentaireDetailsComponent,
+    RgAnimaleDetailsComponent,
+    RgForetDetailsComponent,
+    RgMarineDetailsComponent,
+    RgMicroDetailsComponent,
+    UsersComponent,
+    AddUserComponent,
+    DeleteUserComponent,
+    LoadingComponent,
+    RgAliemntaireAddComponent,
+    RgMarineAddComponent,
+    RgForetAddComponent,
+    RgMicroAddComponent,
+    RgAnimaleAddComponent,
+    WorkflowComponent,
+    WorkflowListComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule

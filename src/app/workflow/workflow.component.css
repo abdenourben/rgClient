@@ -1,0 +1,65 @@
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #28a745;
+}
+
+.status-info {
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.rounded-input {
+  border-radius: 12px;
+}
+
+.previous,
+.current,
+.next {
+  color: white;
+}
+
+.previous {
+  background-color: #28a745;
+}
+.current {
+  background-color: #007bff;
+}
+
+.next {
+  background-color: rgb(175, 175, 175);
+}
+
+.previous + .arrow {
+  border-left-color: #28a745;
+}
+.current + .arrow {
+  border-left-color: #007bff;
+}
+.next + .arrow {
+  border-left-color: rgb(175, 175, 175);
+}
+
+.action {
+  min-width: 130px !important;
+}
+
+.previous .fa-check-circle {
+  display: none !important;
+}
+
+.current .fa-check-double,
+.next .fa-check-double {
+  display: none !important;
+}
+
+.mmodal {
+  z-index: 65;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.808);
+}

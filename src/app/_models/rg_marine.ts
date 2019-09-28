@@ -1,4 +1,5 @@
 export class RgMarine {
+	//attributs communs
     id: number; 
     nomCommunFr: string;
 	nomCommunAr: string;  
@@ -6,9 +7,44 @@ export class RgMarine {
 	description: string;
     morphologie: string;
 	formuleChimique: string; 
-	structure: string;
 	environnement: string; 
-	transmission: string; 
 	cycleVie: string; 
-    marine: string; 
+	etatRisque: string; 
+	//attributs spécifiques
+	transmission: string;
+	
+
+	public constructor
+	(
+		nomCommunFr: string,
+		nomCommunAr: string, 
+		nomScientifique: string,
+		description: string,
+		morphologie: string,
+		formuleChimique: string, 
+		environnement: string,
+		cycleVie: string,
+		etatRisque: string,
+		//attributs spécifiques
+		transmission: string,
+	
+
+		) {
+			this.nomCommunFr = nomCommunFr; 
+			this.nomCommunAr = nomCommunAr; 
+			this.nomScientifique = nomScientifique; 
+			this.description = description; 
+			this.morphologie = morphologie; 
+			this.formuleChimique = formuleChimique; 
+			this.environnement = environnement; 
+			this.cycleVie = cycleVie; 
+			this.etatRisque = etatRisque;
+			this.transmission = transmission; 
+		 }
+
+	
+
+	//public constructor(init?: Partial<RgMarine >) {
+     //   Object.assign(this, init);
+    //}
 }

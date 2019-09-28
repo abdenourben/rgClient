@@ -1,32 +1,35 @@
-<form [formGroup]="addForm" style="margin: 5%">
+<div class="rectangle">
+    <h3>Formulaire d'ajout d'une institution</h3>
+</div>
+<form [formGroup]="addForm" style="margin: 5%; margin-top: 2.5%;">
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="nom ">Nom de l'insitution</label>
-                <input type="text" formControlName="nom" class="form-control" id="nom" placeholder="Nom de l'insitution">
+                <input type="text" formControlName="nom" class="form-control" id="nom" placeholder="">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputAddress">Raison sociale</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <label for="raisonSociale">Raison sociale</label>
+                <input type="text" formControlName="raisonSociale" class="form-control" id="raisonSociale" placeholder="">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputAddress">Statut juridique</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <label for="statutJuridique">Statut juridique</label>
+                <input type="text" formControlName="statutJuridique" class="form-control" id="statutJuridique" placeholder="">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputState">Nature de l'établissement</label>
-                <select id="inputEtat" class="form-control">
+                <label for="natureEtabelissement">Nature de l'établissement</label>
+                <select id="natureEtabelissement" formControlName="natureEtabelissement" class="form-control">
                     <option selected>Nature 1</option>
                     <option>Nature 2</option>
                     <option>Nature 3</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
-                <label for="inputAddress">Date de création</label>
-                <input type="date" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <label for="dateCreation">Date de création</label>
+                <input type="date" formControlName="dateCreation" class="form-control" id="dateCreation" placeholder="">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputState">Catégorie</label>
-                <select id="inputEtat" class="form-control">
+                <label for="categorie">Catégorie</label>
+                <select id="categorie" formControlName="categorie" class="form-control">
                     <option selected>Catégorie 1</option>
                     <option>Catégorie 2</option>
                     <option>Catégorie 3</option>
@@ -34,46 +37,46 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="inputState">Type</label>
-                <select id="inputEtat" class="form-control">
+                <select id="inputEtat" formControlName="raisonSociale" class="form-control">
                     <option selected>Type 1</option>
                     <option>Type 2</option>
                     <option>Type 3</option>
                 </select>
             </div>
             <div class="form-group col-md-12">
-                <label for="inputPassword4">Secteur d'activité</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Password">
+                <label for="secteurActivite">Secteur d'activité</label>
+                <input type="text" formControlName="secteurActivite" class="form-control" id="secteurActivite" placeholder="">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <label for="email">Email</label>
+                <input type="email" formControlName="email" class="form-control" id="email" placeholder="">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputEmail4">Site web</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <label for="siteWeb">Site web</label>
+                <input type="text" formControlName="siteWeb" class="form-control" id="siteWeb" placeholder="">
             </div>
             <div class="form-group col-md-4">
-                <label for="inputEmail4">Téléphone fix</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <label for="telFixe">Téléphone fix</label>
+                <input type="text" formControlName="telFixe" class="form-control" id="telFixe" placeholder="">
             </div>
             <div class="form-group col-md-4">
-                <label for="inputEmail4">Téléphone portable</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <label for="telPortable">Téléphone portable</label>
+                <input type="text" formControlName="telPortable" class="form-control" id="telPortable" placeholder="">
             </div>
             <div class="form-group col-md-4">
-                <label for="inputEmail4">Fax</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <label for="fax">Fax</label>
+                <input type="text" formControlName="fax" class="form-control" id="fax" placeholder="">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputState">Type d'implication APA</label>
-                <select id="inputEtat" class="form-control">
+                <label for="typeImplicationApa">Type d'implication APA</label>
+                <select id="typeImplicationApa" formControlName="typeImplicationApa" class="form-control">
                     <option selected>Recherche</option>
                     <option>Éducation</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
-                <label for="inputAddress">Date de création</label>
-                <input type="date" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <label for="anneeImplicationApa">Année d'implication APA</label>
+                <input type="text" formControlName="anneeImplicationApa" class="form-control" id="anneeImplicationApa" placeholder="">
             </div>
         </div>	 
         <button type="submit" class="btn btn-success" (click)="onSubmit()">Ajouter</button>
