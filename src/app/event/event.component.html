@@ -1,110 +1,40 @@
-<div class="container bg-light h-100" style="margin-bottom: 2em;" >
-    <div class="row bg-primary p-3 align-items-center rounded" style="background-color: #0b8557 !important">
-      <p class="col-auto h5 text-white m-0 p-0 mr-2">Liste des</p>
-      <p class="col-auto  h4 font-weight-bold text-white m-0 p-0">Évènements de l'année en cours</p>
-      <div class="col"></div>
-      <button [disabled]="loading" class="btn btn-light" routerLink="/institution/add" (click)="onAddClicked()">
-        <i class="fa fa-plus fa-1x  mr-1"></i>Ajouter un évènement
-      </button>
-    </div>
-  </div>
+<div class="row">
+    <br>
+    <p class="col-md-11">
 
-  <div class="container"  style="margin: 10%; margin-top: -5%">
-    <div class="row">
-        <div class="dates col-lg-2" style="margin-top: 7%;margin-left: 2%">
-                <!-- menu -->
+    </p>
+
+   <a href="evenements/ajouterevenements" class="col-md-1" style="margin-top: 15px"  class="btn btn-primary button-mod"> Ajouter</a>
+    <br>
+    <div class="dates col-lg-2" style="margin-top: 7%;margin-left: 2%">
+        <!-- menu -->
+
                 <div id="MainMenu">
                 <div class="list-group panel">
-                    <a routerLink="#" class="list-group-item list-group-item-success" data-parent="#MainMenu">Évènement par année</a>
-                    <a routerLink="#" class="list-group-item" data-parent="#MainMenu">2019</a>
-                    <a routerLink="#" class="list-group-item" data-parent="#MainMenu">2018</a>
-                    <a routerLink="#" class="list-group-item" data-parent="#MainMenu">2017</a>
-                    <a routerLink="#" class="list-group-item" data-parent="#MainMenu">2016</a>
-                    <a routerLink="#" class="list-group-item" data-parent="#MainMenu">2015</a>
-                    <a routerLink="#" class="list-group-item" data-parent="#MainMenu">2014</a>
-                    <a routerLink="#" class="list-group-item" data-parent="#MainMenu">2013</a>
-                    <a routerLink="#" class="list-group-item" data-parent="#MainMenu">2012</a>
+                    <a class="list-group-item list-group-item-success" data-parent="#MainMenu">Evénements par année</a>
+
+                    <a (click)="getEvent('2019')" style="color:blue; " class="list-group-item" data-parent="#MainMenu">2019</a>
+                    <a (click)="getEvent('2018')" style="color:blue; " class="list-group-item" data-parent="#MainMenu" tyle="color:blue;">2018</a>
+                    <a (click)="getEvent('2017')" style="color:blue; " class="list-group-item">2017</a>
+                    <a (click)="getEvent('2016')" style="color:blue; " class="list-group-item" data-parent="#MainMenu">2016</a>
+                    <a (click)="getEvent('2015')" style="color:blue; " class="list-group-item" data-parent="#MainMenu">2015</a>
+                    <a (click)="getEvent('2014')" style="color:blue; " class="list-group-item" data-parent="#MainMenu">2014</a>
+                    <a (click)="getEvent('2013')" style="color:blue; " class="list-group-item" data-parent="#MainMenu">2013</a>
+                    <a (click)="getEvent('2012')" style="color:blue; " class="list-group-item" data-parent="#MainMenu">2012</a>
+                    <hr class="my-5">
+                    <div> </div>
                 </div>
                 </div> 
         </div>
+
     
         <div class="my-5 col-lg-8">
-    
-                <!-- Section heading -->
-                <br>
-                <br>            
-                
+
                 <div class="row">
-            
-                <!-- Grid column -->
-                <div class="col-lg-5 col-xl-4">
-            
-                    <!-- Featured image -->
-                    <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
-                    <img class="img-fluid" src="http://www.dz.undp.org/content/dam/algeria/img/EnvironnementetEnergie/PNA44.jpg/_jcr_content/renditions/cq5dam.web.699.470.jpeg" alt="Sample image">
-                    <a>
-                        <div class="mask rgba-white-slight"></div>
-                    </a>
-                    </div>
-            
-                </div>
-                <!-- Grid column -->
-            
-                <!-- Grid column -->
-                <div class="col-lg-7 col-xl-8">
-            
-                    <!-- Post title -->
-                    <h3 class="font-weight-bold mb-3"><strong>Un pas supplémentaire pour la planification de l’adaptation aux changements climatiques en Algérie
-                    </strong></h3>
-                    <!-- Excerpt -->
-                    <p class="dark-grey-text">À l’instar des pays de sa région, l’Algérie est particulièrement vulnérable aux effets des changements climatiques : réduction des précipitations et raréfaction des ressources hydriques, désertification, événements climatiques extrêmes...</p>
-                    <!-- Post data -->
-                    <p>par <a class="font-weight-bold">Dr Ismail Bennacer</a>, 19/04/2018</p>
-                    <!-- Read more button -->
-                    <button type="button" class="btn btn-primary btn-md">Lire plus</button>
-            
-                </div>
-                <!-- Grid column -->
-            
-                </div>
-                <hr class="my-5">
-            
-                 
-                <div class="row">
-            
+
+                    <div class="col-lg-5 col-xl-8" *ngFor="let activite of activites">
+
                     <!-- Grid column -->
-                    <div class="col-lg-5 col-xl-4">
-                
-                        <!-- Featured image -->
-                        <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
-                        <img class="img-fluid" src="http://www.dz.undp.org/content/dam/algeria/img/EnvironnementetEnergie/PNA44.jpg/_jcr_content/renditions/cq5dam.web.699.470.jpeg" alt="Sample image">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                        </div>
-                
-                    </div>
-                    <!-- Grid column -->
-                
-                    <!-- Grid column -->
-                    <div class="col-lg-7 col-xl-8">
-                
-                        <!-- Post title -->
-                        <h3 class="font-weight-bold mb-3"><strong>Un pas supplémentaire pour la planification de l’adaptation aux changements climatiques en Algérie
-                        </strong></h3>
-                        <!-- Excerpt -->
-                        <p class="dark-grey-text">À l’instar des pays de sa région, l’Algérie est particulièrement vulnérable aux effets des changements climatiques : réduction des précipitations et raréfaction des ressources hydriques, désertification, événements climatiques extrêmes...</p>
-                        <!-- Post data -->
-                        <p>par <a class="font-weight-bold">Dr Ismail Bennacer</a>, 19/04/2018</p>
-                        <!-- Read more button -->
-                        <button type="button" class="btn btn-primary btn-md">Lire plus</button>
-                
-                    </div>
-                    <!-- Grid column -->
-                
-                </div>
-                <hr class="my-5">
-                
 
                 <div class="row">
             
@@ -113,10 +43,11 @@
                 
                         <!-- Featured image -->
                         <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
-                        <img class="img-fluid" src="http://www.dz.undp.org/content/dam/algeria/img/EnvironnementetEnergie/PNA44.jpg/_jcr_content/renditions/cq5dam.web.699.470.jpeg" alt="Sample image">
+                            <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" class="card-img-top" alt="...">
                         <a>
                             <div class="mask rgba-white-slight"></div>
                         </a>
+
                         </div>
                 
                     </div>
@@ -126,25 +57,25 @@
                     <div class="col-lg-7 col-xl-8">
                 
                         <!-- Post title -->
-                        <h3 class="font-weight-bold mb-3"><strong>Un pas supplémentaire pour la planification de l’adaptation aux changements climatiques en Algérie
-                        </strong></h3>
+                        <h5 class="font-weight-bold mb-3"><strong> {{activite.titre}}
+                        </strong></h5>
                         <!-- Excerpt -->
-                        <p class="dark-grey-text">À l’instar des pays de sa région, l’Algérie est particulièrement vulnérable aux effets des changements climatiques : réduction des précipitations et raréfaction des ressources hydriques, désertification, événements climatiques extrêmes...</p>
+                        <p class="dark-grey-text"> {{activite.description}}...</p>
                         <!-- Post data -->
-                        <p>par <a class="font-weight-bold">Dr Ismail Bennacer</a>, 19/04/2018</p>
+                        <p>A <a class="font-weight-bold">{{activite.localisation}}</a>, Le {{activite.date_debut}}</p>
                         <!-- Read more button -->
-                        <button type="button" class="btn btn-primary btn-md">Lire plus</button>
+                        <a href="/evenements/{{activite.id}}" class="btn btn-primary btn-md">Lire plus</a>
                 
                     </div>
                     <!-- Grid column -->
                 
                 </div>
                 <hr class="my-5">
-            
+
+                </div>
+        </div>
         </div>
 </div>
-  </div>
-
 
 
 

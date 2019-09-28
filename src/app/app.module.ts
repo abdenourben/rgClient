@@ -14,9 +14,7 @@ import { PermisComponent } from './permis/permis.component';
 import { DemandepermisComponent } from './demandepermis/demandepermis.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjetsComponent } from './projets/projets.component';
-import { AddprojectComponent } from './addproject/addproject.component';
 import { EventComponent } from './event/event.component';
-import { AddeventComponent } from './addevent/addevent.component';
 import { AdminComponent } from './admin/admin.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -53,6 +51,14 @@ import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component
 import { WorkflowComponent } from './workflow/workflow.component';
 import { WorkflowListComponent } from './workflow-list/workflow-list.component';
 import { AdminModule } from './admin/admin.module';
+import { EventDetailComponent } from './event-detail/event-detail.component';
+import { EventEditComponent } from './event-edit/event-edit.component';
+import {EventAddComponent} from './event-add/event-add.component';
+import { ProjetsAddComponent } from './projets-add/projets-add.component';
+import { ProjetsDetailComponent } from './projets-detail/projets-detail.component';
+import { ProjetsEditComponent } from './projets-edit/projets-edit.component';
+import { RgVersionComponent } from './rg-version/rg-version.component';
+
 
 
 
@@ -70,9 +76,8 @@ import { AdminModule } from './admin/admin.module';
     DemandepermisComponent,
     ContactComponent,
     ProjetsComponent,
-    AddprojectComponent,
     EventComponent,
-    AddeventComponent,
+    EventAddComponent,
     AdminComponent,
     InstitutionComponent,
     InstitutionDetailComponent,
@@ -98,18 +103,24 @@ import { AdminModule } from './admin/admin.module';
     RgForetAddComponent,
     RgMicroAddComponent,
     RgAnimaleAddComponent,
-    WorkflowComponent,
-    WorkflowListComponent,
+    EventDetailComponent,
+    EventEditComponent,
+    ProjetsAddComponent,
+    ProjetsDetailComponent,
+    ProjetsEditComponent,
+    RgVersionComponent,
    
   ],
   imports: [
     BrowserModule,
+    AdminModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule,
-    AdminModule
+    NgbModule
+    
+   
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

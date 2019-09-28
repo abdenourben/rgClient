@@ -1,0 +1,48 @@
+<div class="container" *ngIf="activite">
+    <b>{{activite.titre}}</b>
+    <form [formGroup]="modifyForm" style="margin: 5%">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputTitre">Titre de l'evenement</label>
+                <input type="text" class="form-control" id="inputTitre" value="{{activite.titre}}">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputDateDebut">Date de Début</label>
+                <input type="date" class="form-control" id="inputDateDebut" value="{{activite.date_debut}}">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputDateFin">Date de Fin</label>
+                <input type="date" class="form-control" id="inputDateFin" value="{{activite.date_fin}}">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputDomaine" >Domaine</label>
+                <input type="text" class="form-control" id="inputDomaine" value="{{activite.domaine}}">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputType">Type</label>
+                <select id="inputType" class="form-control">
+                    <option selected>Event</option>
+                    <option>Project</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputLocalisation">Localisation </label>
+                <input type="text" class="form-control" id="inputLocalisation" value="{{activite.localisation}} ">
+            </div>
+
+            <div class="form-group col-md-12" >
+                <label for="inputDescription">Description</label>
+                <textarea style="height: 120px;" type="text" class="form-control" id="inputDescription" value="{{activite.description}}"> </textarea>
+            </div>
+
+            <div class="form-group col-md-12">
+                <label for="inputContenu">Contenu</label>
+                <textarea style="height: 250px;" type="text" class="form-control" id="inputContenu" value="{{activite.contenu}}"> </textarea>
+            </div>
+        </div>
+
+        <a href="/evenements/{{activite.id}}"  class="btn btn-primary">Annuler</a>
+
+    </form>
+</div>
+

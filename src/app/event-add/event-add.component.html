@@ -1,0 +1,48 @@
+<form  style="margin: 5%">
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="titre"> Titre de l'evenement</label>
+            <input type="text" formControlName="titre" class="form-control" id="titre" placeholder="">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="date_debut">Date de Début</label>
+            <input type="date" formControlName="date_debut" class="form-control" id="date_debut" placeholder="">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="date_fin">Date de Fin</label>
+            <input type="date" formControlName="date_fin" class="form-control" id="date_fin" placeholder="">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="domaine">Domaine</label>
+            <select id="domaine" formControlName="domaine" class="form-control">
+                <option selected>Domaine 1</option>
+                <option>Domaine 2</option>
+                <option>Domaine 3</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="type">Type</label>
+            <select id="type" formControlName="type" class="form-control">
+                <option selected>Event</option>
+                <option>Project</option>
+            </select>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="localisation">Localisation</label>
+            <input type="text" formControlName="localisation" class="form-control" id="localisation" placeholder="">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="description">Description</label>
+            <input type="text" formControlName="description" class="form-control" id="description" placeholder="">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="contenu">Contenu</label>
+            <input type="text" formControlName="contenu" class="form-control" id="contenu" placeholder="">
+        </div>
+
+
+        <button >Ajouter</button>
+    </div>
+
+</form>
