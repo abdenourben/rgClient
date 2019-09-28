@@ -48,6 +48,9 @@ import { RgMarineAddComponent } from './rg-marine-add/rg-marine-add.component';
 import { RgForetAddComponent } from './rg-foret-add/rg-foret-add.component';
 import { RgMicroAddComponent } from './rg-micro-add/rg-micro-add.component';
 import { RgAnimaleAddComponent } from './rg-animale-add/rg-animale-add.component';
+import { WorkflowComponent } from './workflow/workflow.component';
+import { WorkflowListComponent } from './workflow-list/workflow-list.component';
+import { AdminModule } from './admin/admin.module';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { EventEditComponent } from './event-edit/event-edit.component';
 import {EventAddComponent} from './event-add/event-add.component';
@@ -55,6 +58,7 @@ import { ProjetsAddComponent } from './projets-add/projets-add.component';
 import { ProjetsDetailComponent } from './projets-detail/projets-detail.component';
 import { ProjetsEditComponent } from './projets-edit/projets-edit.component';
 import { RgVersionComponent } from './rg-version/rg-version.component';
+
 
 
 
@@ -109,11 +113,14 @@ import { RgVersionComponent } from './rg-version/rg-version.component';
   ],
   imports: [
     BrowserModule,
+    AdminModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule
+    
+   
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

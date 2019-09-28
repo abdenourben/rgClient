@@ -1,1 +1,85 @@
-<p>admin works!</p>
+<div class="tabset  nav-fill"  >
+    <ngb-tabset>
+        <ngb-tab title="Gestion des utilisateurs">
+            <ng-template ngbTabContent>
+                <app-users></app-users>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Gestion des ressources">
+            <ng-template ngbTabContent>
+
+                <div class="container-fluid">
+                    <ul class="nav nav-pills nav-fill">
+
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/gestionRg/creationRgF" routerLinkActive="active">Ressources Forestières</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/gestionRg/creationRgp" routerLinkActive="active">Ressources Alimentaires</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/gestionRg/creationRgm" routerLinkActive="active">Ressources Marines</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/gestionRg/creationRgsd" routerLinkActive="active">Ressources Animales</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/gestionRg/creationRgmo" routerLinkActive="active">Ressources Micro-Organismes</a>
+                        </li>
+
+
+                    </ul>
+                    <router-outlet></router-outlet>
+                </div>
+
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Gestion de l'annuaire">
+            <ng-template ngbTabContent>
+                <div class="container-fluid">
+                    <ul class="nav nav-pills nav-fill">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/annuaire/creation" routerLinkActive="active"> Création</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/annuaire/suppression" routerLinkActive="active">Supression</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/annuaire/modification" routerLinkActive="active">Modification</a>
+                        </li>
+                    </ul>
+                    <router-outlet></router-outlet>
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Gestion permis" >
+            <ng-template ngbTabContent>
+                <app-workflow-list></app-workflow-list>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Gestion des activités">
+            <ng-template ngbTabContent>
+                <div class="container-fluid">
+                    <ul class="nav nav-pills nav-fill">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/event/creation" routerLinkActive="active"> Ajouter Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin/projet/creation" routerLinkActive="active">Ajouter Projet</a>
+                        </li>
+                    </ul>
+                    <router-outlet></router-outlet>
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Gestion reglementation">
+            <ng-template ngbTabContent>
+
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
+</div>
+
