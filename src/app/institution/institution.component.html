@@ -10,21 +10,50 @@
   </div>
 </div>
 
-<div class="container" >  
+<div class="col-12">
+  <button class="btn btn-success btnchercher1" (click)="chercher()">Chercher par nom</button>
+  <button class="btn btn-success btnchercher" (click)="chercherType()">Chercher par type</button>
+  <button class="btn btn-success btnchercher" (click)="chercherStatut()">Chercher par statut</button>
+  <button class="btn btn-success btnchercher" (click)="chercherCategorie()">Chercher par categorie</button>
+  <button class="btn btn-success btnchercher" (click)="chercherSecteur()">Chercher par Secteur</button>
+  <button class="btn btn-success btnchercher2" (click)="chercherTypeImplucation()">Chercher pa Implication Apa</button>
+  <input type="text" [(ngModel)]="motCle" class="col-12 barsearch" placeholder="Rechercher par mot clé "/>
+</div>
+
+<!-- added by somia-->
+<div>
+  <a routerLink="/institution/add" class="btn-lg btn-danger button-aj">Ajouter </a>
+  <h1 class="title">Liste des institutions</h1>
+</div>
+
 <div class="row">
-  <div class="col-lg-3 container-card" *ngFor="let institution of institutions">
+  <div class="col-3 container-card" *ngFor="let institution of institutions">
     <div class="card">
-        <img style="height: 150px; width: 150px; margin: auto;" src="../../assets/img/no_image.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h6 class="card-title ">{{institution.nom}}</h6>
-          <p class="card-text">
-            {{institution.categorie}}
-            <br>
-            {{institution.type}}
-          </p>
-        </div>
-        <a routerLink="/institution/{{institution.id}}" class="btn btn-primary card-padding">Consulter</a>
+      <div class="card-header bg-success"><h6 class="card-title txtcolor">{{institution.nom}}</h6></div>
+      <div class="card-body">
+        <b>Raison sociale&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> {{institution.raison}}
+        <br>
+
+        <b>Statut juridique&nbsp;&nbsp;&nbsp;&nbsp;:</b> {{institution.statut}}
+        <br>
+
+        <b>Secteur d'activité&nbsp;:</b> {{institution.secteur}}
+        <br>
+
+        <b>Catégorie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> {{institution.categorie}}
+        <br>
+
+        <b>Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> {{institution.type}}
+        <br>
+
+        <b>Date de création&nbsp;&nbsp;:</b> {{institution.creation}}
+        <br>
+        <b>Implication Apa&nbsp;&nbsp;:</b> {{institution.typeApa}}
+      </div>
+      <a routerLink="/institution/{{institution.id}}" class="btn btn-success card-padding">Consulter</a>
     </div>
-  </div> 
+  </div>
 </div>
-</div>
+
+
+
