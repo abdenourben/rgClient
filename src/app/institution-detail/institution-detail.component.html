@@ -1,8 +1,10 @@
-<div class="rectangle"  *ngIf="institution">
-  <h3>{{institution.nom}}</h3>
-</div>
+<div class="container" *ngIf="institution">
+  <h3 class="title">
+    <b>{{institution.nom}}</b>
+    {{institution.raisonSociale}}
+  </h3>
+  <br>
 
-<div class="container" style="margin: 5%; margin-top:2.5%">
   <div>
     <a routerLink="/institution/edit/{{institution.id}}" class="btn btn-primary button-mod">Modifier</a>
     <a routerLink="#" class="btn btn-danger button-supp">Supprimer</a>
